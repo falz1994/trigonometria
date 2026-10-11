@@ -303,41 +303,25 @@
     <section class="slide slide-dark" data-title="Objetivo de la trigonometría">
       <div class="slide-inner">
         <div class="slide-kicker">02 · Después de la álgebra booleana</div>
-        <h2>¿Para qué usamos trigonometría?</h2>
-        <p class="slide-lede">La lógica booleana ya indicó si el desviador puede actuar y qué tipo de pieza debe atender. Ahora la trigonometría convierte esa decisión en una geometría que se puede planificar.</p>
-        <div class="slide-grid-3" style="margin-top: 28px;">
+        <h2>Qué nos dice cada fórmula</h2>
+        <p class="slide-lede">La lógica booleana indica qué ruta puede usar la pieza. La trigonometría indica qué tamaño e inclinación debe tener esa ruta.</p>
+        <div class="slide-grid-2" style="margin-top: 26px;">
           <div class="slide-card">
-            <h3>1. Medir los lados</h3>
-            <p>Identificamos la distancia horizontal y la distancia vertical del recorrido.</p>
+            <h3>1. Longitud de la banda inclinada</h3>
+            <div class="slide-formula">\[L^2=(\text{horizontal})^2+(\text{vertical})^2\]</div>
+            <p>Esta fórmula calcula \(L\), la distancia real sobre la parte inclinada de la banda. Sirve para definir el tramo que se debe construir y apoyar.</p>
           </div>
           <div class="slide-card">
-            <h3>2. Formar el triángulo</h3>
-            <p>La distancia horizontal, la vertical y la inclinada forman un triángulo rectángulo.</p>
-          </div>
-          <div class="slide-card">
-            <h3>3. Calcular el ángulo</h3>
-            <p>Calculamos la hipotenusa y el ángulo para compararlo con el límite permitido.</p>
+            <h3>2. Inclinación de la banda</h3>
+            <div class="slide-formula">\[\tan\theta=\frac{\text{vertical}}{\text{horizontal}}\]</div>
+            <p>Esta fórmula calcula \(\theta\), el ángulo de inclinación. Sirve para saber si la banda sube con un ángulo aceptable.</p>
           </div>
         </div>
-        <div class="slide-formula" style="margin-top: 26px;">
-          \[
-            L^2=(\text{horizontal})^2+(\text{vertical})^2
-            \qquad
-            \tan\theta=\frac{\text{vertical}}{\text{horizontal}}
-          \]
+        <div class="slide-measure-note" style="margin-top: 18px;">
+          <strong>¿Qué significa el máximo de \(25^\circ\)?</strong>
+          <p>Es el mayor ángulo que se permite para esta propuesta. No significa que la banda deba medir exactamente \(25^\circ\). El ejemplo obtiene \(20.56^\circ\), que es menor que \(25^\circ\), por eso cumple. Si el resultado fuera mayor, se aumenta la distancia horizontal y se vuelve a calcular.</p>
         </div>
-        <div class="slide-grid-2" style="margin-top: 16px;">
-          <div class="slide-card">
-            <h3>Objetivo de esta fase</h3>
-            <p>Determinar la dirección, el espacio y la longitud de cada ruta para que el desviador pueda enviar la pieza a la rampa correcta.</p>
-          </div>
-          <div class="slide-card">
-            <h3>Ejemplo del documento</h3>
-            <p>Con \(4.00\ \mathrm{m}\) horizontales y \(1.50\ \mathrm{m}\) verticales, se obtiene:</p>
-            <div class="slide-formula">\(L\approx4.27\ \mathrm{m},\qquad \theta\approx20.56^\circ\)</div>
-          </div>
-        </div>
-        <p class="slide-note">La trigonometría resuelve la parte geométrica de la planeación. Después todavía se deben revisar carga, fricción, velocidad y potencia.</p>
+        <p class="slide-note">Con \(4.00\ \mathrm{m}\) horizontales y \(1.50\ \mathrm{m}\) verticales, el ejemplo obtiene \(L\approx4.27\ \mathrm{m}\) y \(\theta\approx20.56^\circ\).</p>
       </div>
     </section>
 
@@ -654,30 +638,29 @@
 
     <section class="slide slide-white" data-title="Cierre">
       <div class="slide-inner">
-        <div class="slide-kicker">11 · Resumen</div>
-        <h2>De una medida a una decisión</h2>
+        <div class="slide-kicker">11 · Cierre y siguiente paso</div>
+        <h2>Del cálculo al prototipo</h2>
         <div class="slide-grid-2">
           <div>
             <ul class="slide-list">
-              <li>Describe qué pieza llega y qué rampa está libre.</li>
-              <li>Ubica el desviador como origen del plano.</li>
-              <li>Identifica horizontal, vertical e hipotenusa.</li>
-              <li>Calcula \(L\) con Pitágoras.</li>
-              <li>Calcula \(\theta\) con \(\tan\) y \(\arctan\).</li>
-              <li>Compara el ángulo con el límite permitido.</li>
+              <li>Medir en la instalación las distancias reales de cada ruta.</li>
+              <li>Calcular la longitud y el ángulo de cada rampa.</li>
+              <li>Usar esas medidas para construir o modelar el recorrido.</li>
+              <li>Probar la báscula, la lógica y el desviador neumático.</li>
             </ul>
           </div>
           <div class="slide-card">
-            <h3>Resultado del ejemplo</h3>
+            <h3>El prototipo debe seguir los cálculos</h3>
             <div class="slide-formula">
               \[
                 L\approx4.27\ \mathrm{m},\qquad
                 \theta\approx20.56^\circ
               \]
             </div>
-            <p>La matemática geométrica explica una parte del diseño. La lógica booleana decide cuándo el actuador puede ejecutarla.</p>
+            <p>Sí. El modelo físico debe respetar las medidas reales y el ángulo calculado. Si se construye a escala, conserva el mismo ángulo y cambia todas las longitudes en la misma proporción.</p>
           </div>
         </div>
+        <p class="slide-note">Antes de construir, se miden las rutas reales. Si una medida cambia, se repite el cálculo. También se revisan carga, fricción, velocidad y potencia.</p>
       </div>
     </section>
   </main>
