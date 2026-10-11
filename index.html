@@ -365,11 +365,11 @@
           <path d="M578 230L905 356" stroke="#19a7b8" stroke-width="12" stroke-linecap="round" marker-end="url(#flowCyan)"/>
           <path d="M578 230H905M905 230V104M905 230V356" stroke="#8ca2b2" stroke-width="2" stroke-dasharray="7 7"/>
           <rect x="702" y="58" width="280" height="80" rx="14" fill="#fff9f1" stroke="#edc38f" stroke-width="2"/>
-          <text x="724" y="83" fill="#9b5515" font-size="16" font-weight="850">Rampa para pieza pesada</text>
+          <text x="724" y="83" fill="#9b5515" font-size="16" font-weight="850">Banda de salida pesada</text>
           <text x="724" y="107" fill="#9b5515" font-size="14">avance, lateral, diagonal y ángulo</text>
           <text x="724" y="126" fill="#66758a" font-size="12">usar las medidas de esta ruta</text>
           <rect x="702" y="310" width="280" height="80" rx="14" fill="#f1fbfc" stroke="#8bd3dc" stroke-width="2"/>
-          <text x="724" y="335" fill="#087c8a" font-size="16" font-weight="850">Rampa para pieza liviana</text>
+          <text x="724" y="335" fill="#087c8a" font-size="16" font-weight="850">Banda de salida liviana</text>
           <text x="724" y="359" fill="#087c8a" font-size="14">avance, lateral, diagonal y ángulo</text>
           <text x="724" y="378" fill="#66758a" font-size="12">usar las medidas de esta ruta</text>
           <text x="952" y="219" fill="#183b56" font-size="14" font-weight="850">+x</text>
@@ -429,10 +429,10 @@
             <path d="M72 165L104 165L104 135" fill="none" stroke="#8ca2b2" stroke-width="2"/>
             <circle cx="72" cy="165" r="9" fill="#fff" stroke="#d8515d" stroke-width="4"/>
             <text x="44" y="190" fill="#d8515d" font-size="14" font-weight="850">inicio</text>
-            <text x="215" y="151" fill="#183b56" font-size="14" font-weight="850">avance desde el desviador</text>
+            <text x="190" y="151" fill="#183b56" font-size="14" font-weight="850">avance hasta la unión</text>
             <text x="404" y="112" fill="#9b5515" font-size="13" font-weight="850">separación lateral</text>
             <text x="404" y="230" fill="#087c8a" font-size="13" font-weight="850">separación lateral</text>
-            <text x="174" y="102" transform="rotate(-16 174 102)" fill="#b43e4b" font-size="13" font-weight="850">ruta diagonal</text>
+            <text x="154" y="102" transform="rotate(-16 154 102)" fill="#b43e4b" font-size="13" font-weight="850">carril de transferencia</text>
             <text x="116" y="144" fill="#9b5515" font-size="13" font-weight="850">ángulo θ</text>
             <text x="116" y="198" fill="#087c8a" font-size="13" font-weight="850">ángulo θ</text>
             <text x="340" y="60" fill="#9b5515" font-size="14" font-weight="850">rampa pesada</text>
@@ -444,9 +444,9 @@
         <div class="slide-map-caption">
           <div><strong>1. Sensor de peso</strong><span>La celda de carga clasifica la pieza en la báscula.</span></div>
           <div><strong>2. Recorrido</strong><span>La pieza avanza por la banda hasta llegar al desviador.</span></div>
-          <div><strong>3. Desvío</strong><span>El cilindro guía la pieza a una salida sin detenerla.</span></div>
+          <div><strong>3. Desvío</strong><span>El cilindro guía la pieza al carril de transferencia sin detenerla.</span></div>
         </div>
-        <p class="slide-note">El triángulo empieza en el desviador, no en la báscula. Para cada salida se mide el avance desde el desviador y la separación lateral real.</p>
+        <p class="slide-note">El triángulo empieza en el desviador, no en la báscula. El carril de transferencia es diagonal y se une a la banda de salida.</p>
       </div>
     </section>
 
@@ -484,7 +484,7 @@
     <section class="slide slide-white" data-title="Triángulo">
       <div class="slide-inner">
         <div class="slide-kicker">06 · El triángulo rectángulo</div>
-        <h2>Medidas de la ruta después del desviador</h2>
+        <h2>El carril que conecta con la salida</h2>
         <div class="slide-grid-2">
           <svg class="slide-svg" viewBox="0 0 560 340" role="img" aria-label="Triángulo rectángulo con avance, desplazamiento lateral y ruta diagonal">
             <path d="M80 260H455" stroke="#183b56" stroke-width="8" stroke-linecap="round"/>
@@ -492,16 +492,16 @@
             <path d="M80 260L455 105" stroke="#d8515d" stroke-width="11" stroke-linecap="round"/>
             <path d="M435 260V240H455" fill="none" stroke="#8ca2b2" stroke-width="2"/>
             <path d="M140 260 A60 60 0 0 0 135 236" fill="none" stroke="#ed8b32" stroke-width="3"/>
-            <text x="160" y="286" fill="#183b56" font-weight="850">avance</text>
+            <text x="160" y="286" fill="#183b56" font-weight="850">avance hasta la unión</text>
             <text x="465" y="182" fill="#9b5515" font-weight="850">lateral</text>
-            <text x="220" y="164" transform="rotate(-22 220 164)" fill="#b43e4b" font-weight="850">ruta diagonal</text>
+            <text x="190" y="164" transform="rotate(-22 190 164)" fill="#b43e4b" font-weight="850">carril de transferencia</text>
             <text x="132" y="238" fill="#9b5515" font-weight="850">θ</text>
             <text x="405" y="283" fill="#66758a" font-size="13">90°</text>
           </svg>
           <div>
             <div class="slide-card">
-              <h3>Solo usamos tres medidas</h3>
-              <p>Desde el desviador, medimos cuánto avanza la pieza, cuánto se desplaza a un lado y cuál es el recorrido diagonal hasta la salida.</p>
+              <h3>El triángulo describe un carril</h3>
+              <p>El carril de transferencia sale del desviador y se une a la banda de salida. En matemáticas, el avance se llama cateto adyacente y el lateral cateto opuesto. Son medidas, no piezas del sistema.</p>
               <div class="slide-formula">\(\text{diagonal}^2=\text{avance}^2+\text{lateral}^2\)</div>
             </div>
             <div class="slide-card" style="margin-top:14px;">
@@ -722,8 +722,8 @@
           <dl class="definition">
             <dt>Cateto horizontal</dt><dd>distancia que avanza la pieza sobre la banda.</dd>
             <dt>Cateto vertical</dt><dd>separación entre la banda principal y la rampa.</dd>
-            <dt>Hipotenusa L</dt><dd>distancia inclinada desde el desviador hasta la rampa.</dd>
-            <dt>Ángulo θ</dt><dd>inclinación de la ruta medida desde la horizontal.</dd>
+            <dt>Ruta diagonal L</dt><dd>distancia del carril de transferencia entre el desviador y la salida.</dd>
+            <dt>Ángulo θ</dt><dd>ángulo de desvío medido desde la dirección de avance.</dd>
           </dl>
           <div class="formula">
             \[
@@ -741,7 +741,7 @@
             <div class="step"><div><strong>1. Pitágoras</strong><p>Primero calcula la hipotenusa: <span class="equation">\(L = \sqrt{\text{horizontal}^2 + \text{vertical}^2}\)</span>.</p></div></div>
             <div class="step"><div><strong>2. Tangente</strong><p>Después calcula el ángulo: <span class="equation">\(\tan\theta = \frac{\text{vertical}}{\text{horizontal}}\)</span>.</p></div></div>
             <div class="step"><div><strong>3. Tangente inversa</strong><p>Despeja el ángulo con la calculadora: <span class="equation">\(\theta = \arctan\left(\frac{\text{vertical}}{\text{horizontal}}\right)\)</span>.</p></div></div>
-            <div class="step"><div><strong>4. Interpretación</strong><p>Compara el ángulo con el límite permitido y decide si la inclinación es aceptable.</p></div></div>
+            <div class="step"><div><strong>4. Interpretación</strong><p>Usa el ángulo para orientar el carril de transferencia hacia la salida seleccionada.</p></div></div>
           </div>
         </article>
       </div>
@@ -751,12 +751,12 @@
       <div class="section-intro">
         <div class="kicker">02 · Triángulos rectángulos</div>
         <h2>Identifica cada lado antes de calcular</h2>
-        <p>Las dos rutas se pueden leer como triángulos rectángulos. Para no inventar medidas del desviador, usamos los valores del ejercicio de manufactura del documento: <strong>4.00 m horizontales</strong> y <strong>1.50 m verticales</strong>. La diagonal es la ruta inclinada.</p>
+        <p>Las dos rutas se pueden leer como triángulos rectángulos. Como ejemplo numérico usamos <strong>4.00 m de avance</strong> y <strong>1.50 m de desplazamiento lateral</strong>. La diagonal representa el carril de transferencia.</p>
       </div>
       <div class="grid-2">
         <figure class="panel triangle-card heavy">
           <h3>Ruta de pieza pesada</h3>
-          <svg viewBox="0 0 520 290" role="img" aria-label="Triángulo de la ruta pesada con cateto adyacente, cateto opuesto e hipotenusa">
+          <svg viewBox="0 0 520 290" role="img" aria-label="Triángulo de la ruta pesada con avance, lateral y carril de transferencia">
             <path d="M72 210H392" stroke="#183b56" stroke-width="7" stroke-linecap="round"/>
             <path d="M392 210V90" stroke="#ed8b32" stroke-width="7" stroke-linecap="round"/>
             <path d="M72 210L392 90" stroke="#d8515d" stroke-width="10" stroke-linecap="round"/>
@@ -770,12 +770,12 @@
             <text x="120" y="190" fill="#9b5515" font-size="15" font-weight="800">θ = 20.56°</text>
             <text x="382" y="232" fill="#66758a" font-size="13">ángulo recto</text>
           </svg>
-          <figcaption><strong>Lectura:</strong> en el ejercicio del documento, el horizontal de <strong>4.00 m</strong> es el cateto adyacente y el vertical de <strong>1.50 m</strong> es el cateto opuesto.</figcaption>
-          <div class="side-key"><div class="adj"><b>horizontal</b>4.00 m</div><div class="opp"><b>vertical</b>1.50 m</div><div class="hyp"><b>inclinada</b>4.27 m</div></div>
+          <figcaption><strong>Lectura:</strong> el avance de <strong>4.00 m</strong> y el lateral de <strong>1.50 m</strong> ubican el carril de transferencia.</figcaption>
+          <div class="side-key"><div class="adj"><b>avance</b>4.00 m</div><div class="opp"><b>lateral</b>1.50 m</div><div class="hyp"><b>transferencia</b>4.27 m</div></div>
         </figure>
         <figure class="panel triangle-card light">
           <h3>Ruta de pieza liviana</h3>
-          <svg viewBox="0 0 520 290" role="img" aria-label="Triángulo de la ruta liviana con cateto adyacente, cateto opuesto e hipotenusa">
+          <svg viewBox="0 0 520 290" role="img" aria-label="Triángulo de la ruta liviana con avance, lateral y carril de transferencia">
             <path d="M72 80H392" stroke="#183b56" stroke-width="7" stroke-linecap="round"/>
             <path d="M392 80V200" stroke="#19a7b8" stroke-width="7" stroke-linecap="round"/>
             <path d="M72 80L392 200" stroke="#d8515d" stroke-width="10" stroke-linecap="round"/>
@@ -790,10 +790,10 @@
             <text x="382" y="72" fill="#66758a" font-size="13">ángulo recto</text>
           </svg>
           <figcaption><strong>Lectura:</strong> si la rampa está abajo, la medida sigue siendo <strong>20.56°</strong>; solo cambia el sentido del desvío. La cuenta usa los mismos tres lados.</figcaption>
-          <div class="side-key"><div class="adj"><b>horizontal</b>4.00 m</div><div class="opp"><b>vertical</b>1.50 m</div><div class="hyp"><b>inclinada</b>4.27 m</div></div>
+          <div class="side-key"><div class="adj"><b>avance</b>4.00 m</div><div class="opp"><b>lateral</b>1.50 m</div><div class="hyp"><b>transferencia</b>4.27 m</div></div>
         </figure>
       </div>
-      <div class="reading-rule"><p><strong>Regla rápida:</strong> hipotenusa = lado inclinado frente al ángulo recto; cateto adyacente = lado horizontal que toca al ángulo elegido; cateto opuesto = lado vertical que queda enfrente del ángulo elegido. Por eso, desde la horizontal: <span class="equation">\(\cos\theta = \frac{\text{adyacente}}{\text{hipotenusa}}\)</span>, <span class="equation">\(\sen\theta = \frac{\text{opuesto}}{\text{hipotenusa}}\)</span> y <span class="equation">\(\tan\theta = \frac{\text{opuesto}}{\text{adyacente}}\)</span>.</p></div>
+      <div class="reading-rule"><p><strong>Regla rápida:</strong> el avance y el lateral forman el triángulo de medición. La diagonal representa el carril de transferencia. Para hallar el ángulo de desvío se usa <span class="equation">\(\tan\theta = \frac{\text{lateral}}{\text{avance}}\)</span>.</p></div>
     </section>
 
     <section class="section wrap" id="simulador">
@@ -926,7 +926,7 @@
               \end{aligned}
             \]
           </div>
-          <p class="muted"><strong>Comprobación:</strong> el diseño permite hasta 25°. Como <strong>20.56° &lt; 25°</strong>, cumple el límite de inclinación. Para el desviador, la misma cuenta se repite con las medidas reales de cada rampa.</p>
+          <p class="muted"><strong>Comprobación:</strong> la misma cuenta se repite con las medidas reales de cada banda de salida.</p>
         </article>
         <article class="panel card">
           <div class="kicker">07 · Límites del modelo</div>
@@ -934,7 +934,7 @@
           <ul class="checklist">
             <li>Medir la posición real de cada rampa y reemplazar el ejemplo por sus coordenadas.</li>
             <li>Verificar que el ángulo mecánico admisible del cilindro coincida con el ángulo calculado.</li>
-            <li>Incluir ancho y altura de la pieza, tiempo de respuesta, velocidad de la banda y carrera del actuador.</li>
+            <li>Incluir ancho de la pieza, tiempo de respuesta, velocidad de la banda y carrera del actuador.</li>
             <li>Confirmar que el movimiento no golpee guías, sensores ni la otra ruta.</li>
             <li>Probar la lógica con la banda detenida y en marcha antes de operar con carga.</li>
           </ul>
