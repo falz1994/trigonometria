@@ -303,33 +303,33 @@
     <section class="slide slide-dark" data-title="Objetivo de la trigonometría">
       <div class="slide-inner">
         <div class="slide-kicker">02 · Después de la álgebra booleana</div>
-        <h2>Qué nos dice cada fórmula</h2>
-        <p class="slide-lede">La lógica booleana indica qué ruta puede usar la pieza. La trigonometría indica qué tamaño e inclinación debe tener esa ruta.</p>
+        <h2>La trigonometría en el desviador</h2>
+        <p class="slide-lede">El desviador neumático mueve la pieza a la derecha o a la izquierda. No la eleva. En la vista superior, \(x\) representa el avance y \(y\) la separación lateral.</p>
         <div class="slide-grid-2" style="margin-top: 26px;">
           <div class="slide-card">
-            <h3>1. Longitud de la banda inclinada</h3>
-            <div class="slide-formula">\[L^2=(\text{horizontal})^2+(\text{vertical})^2\]</div>
-            <p>Esta fórmula calcula \(L\), la distancia real sobre la parte inclinada de la banda. Sirve para definir el tramo que se debe construir y apoyar.</p>
+            <h3>1. Longitud de la ruta lateral</h3>
+            <div class="slide-formula">\[L^2=(\text{avance})^2+(\text{separación lateral})^2\]</div>
+            <p>Esta fórmula calcula \(L\), el recorrido diagonal de la pieza visto desde arriba. Sirve para ubicar la banda de salida.</p>
           </div>
           <div class="slide-card">
-            <h3>2. Inclinación de la banda</h3>
-            <div class="slide-formula">\[\tan\theta=\frac{\text{vertical}}{\text{horizontal}}\]</div>
-            <p>Esta fórmula calcula \(\theta\), el ángulo de inclinación. Sirve para saber si la banda sube con un ángulo aceptable.</p>
+            <h3>2. Ángulo de desvío</h3>
+            <div class="slide-formula">\[\tan\theta=\frac{\text{separación lateral}}{\text{avance}}\]</div>
+            <p>Esta fórmula calcula \(\theta\), el giro necesario para enviar la pieza a la derecha o a la izquierda.</p>
           </div>
         </div>
         <div class="slide-measure-note" style="margin-top: 18px;">
-          <strong>¿Qué significa el máximo de \(25^\circ\)?</strong>
-          <p>Es el mayor ángulo que se permite para esta propuesta. No significa que la banda deba medir exactamente \(25^\circ\). El ejemplo obtiene \(20.56^\circ\), que es menor que \(25^\circ\), por eso cumple. Si el resultado fuera mayor, se aumenta la distancia horizontal y se vuelve a calcular.</p>
+          <strong>El máximo de \(25^\circ\) pertenece al ejercicio de la guía</strong>
+          <p>La guía usa \(25^\circ\) para una banda que eleva piezas. Para este desviador lateral, el equipo debe definir el ángulo máximo de giro según el espacio disponible y el diseño del mecanismo. No se debe copiar \(25^\circ\) automáticamente.</p>
         </div>
-        <p class="slide-note">Con \(4.00\ \mathrm{m}\) horizontales y \(1.50\ \mathrm{m}\) verticales, el ejemplo obtiene \(L\approx4.27\ \mathrm{m}\) y \(\theta\approx20.56^\circ\).</p>
+        <p class="slide-note">Los valores \(4.00\ \mathrm{m}\), \(1.50\ \mathrm{m}\), \(4.27\ \mathrm{m}\) y \(20.56^\circ\) sirven como ejemplo de cálculo de la guía. Para el prototipo se sustituyen por las medidas laterales reales.</p>
       </div>
     </section>
 
     <section class="slide slide-white" data-title="Recorrido completo">
       <div class="slide-inner">
         <div class="slide-kicker">03 · Modelo completo del recorrido</div>
-        <h2>De la báscula hasta la rampa</h2>
-        <p class="slide-lede">Este mapa reúne la lectura del peso, el recorrido sobre la banda, el desviador neumático y las dos rutas. Después se separan las partes para calcular el triángulo con calma.</p>
+        <h2>De la báscula a las bandas de salida</h2>
+        <p class="slide-lede">Este mapa se ve desde arriba. Reúne la lectura del peso, el avance sobre la banda, el desviador neumático y las dos salidas laterales.</p>
         <div class="slide-wide-diagram">
         <svg class="slide-svg" viewBox="0 0 1100 440" role="img" aria-label="Recorrido completo desde la báscula al desviador y a las rampas con variables de lógica y geometría">
           <defs>
@@ -366,17 +366,17 @@
           <path d="M578 230H905M905 230V104M905 230V356" stroke="#8ca2b2" stroke-width="2" stroke-dasharray="7 7"/>
           <rect x="702" y="58" width="280" height="80" rx="14" fill="#fff9f1" stroke="#edc38f" stroke-width="2"/>
           <text x="724" y="83" fill="#9b5515" font-size="16" font-weight="850">Rampa para pieza pesada</text>
-          <text x="724" y="107" fill="#9b5515" font-size="14">horizontal, vertical, hipotenusa y ángulo</text>
+          <text x="724" y="107" fill="#9b5515" font-size="14">avance, lateral, diagonal y ángulo</text>
           <text x="724" y="126" fill="#66758a" font-size="12">usar las medidas de esta ruta</text>
           <rect x="702" y="310" width="280" height="80" rx="14" fill="#f1fbfc" stroke="#8bd3dc" stroke-width="2"/>
           <text x="724" y="335" fill="#087c8a" font-size="16" font-weight="850">Rampa para pieza liviana</text>
-          <text x="724" y="359" fill="#087c8a" font-size="14">horizontal, vertical, hipotenusa y ángulo</text>
+          <text x="724" y="359" fill="#087c8a" font-size="14">avance, lateral, diagonal y ángulo</text>
           <text x="724" y="378" fill="#66758a" font-size="12">usar las medidas de esta ruta</text>
           <text x="952" y="219" fill="#183b56" font-size="14" font-weight="850">+x</text>
           <text x="113" y="75" fill="#183b56" font-size="14" font-weight="850">+y</text>
         </svg>
         </div>
-        <p class="slide-note">Antes de calcular, identifica cuatro elementos: distancia horizontal, distancia vertical, hipotenusa y ángulo.</p>
+        <p class="slide-note">Antes de calcular, identifica cuatro elementos: avance, desplazamiento lateral, ruta diagonal y ángulo de desvío.</p>
       </div>
     </section>
 
@@ -384,7 +384,7 @@
       <div class="slide-inner">
         <div class="slide-kicker">04 · Plano cartesiano abstracto</div>
         <h2>Ubicamos el sensor, el recorrido y el desviador</h2>
-        <p class="slide-lede">Usamos el eje \(x\) para seguir el avance de la pieza y el eje \(y\) para mostrar la separación hacia cada rampa. Primero vemos el recorrido y después el triángulo rectángulo de la salida.</p>
+        <p class="slide-lede">Usamos el eje \(x\) para el avance de la pieza y el eje \(y\) para la separación lateral hacia cada salida. El eje \(y\) solo sube o baja en el dibujo, no indica altura física.</p>
         <div class="slide-map-panels" role="group" aria-label="Plano cartesiano separado en recorrido y triángulo de salida">
           <svg class="slide-svg" viewBox="0 0 520 315" role="img" aria-label="Recorrido desde la báscula y sensor S hasta el desviador D">
             <defs>
@@ -430,8 +430,8 @@
             <circle cx="72" cy="165" r="9" fill="#fff" stroke="#d8515d" stroke-width="4"/>
             <text x="44" y="190" fill="#d8515d" font-size="14" font-weight="850">inicio</text>
             <text x="215" y="151" fill="#183b56" font-size="14" font-weight="850">cateto horizontal</text>
-            <text x="404" y="112" fill="#9b5515" font-size="13" font-weight="850">cateto vertical</text>
-            <text x="404" y="230" fill="#087c8a" font-size="13" font-weight="850">cateto vertical</text>
+            <text x="404" y="112" fill="#9b5515" font-size="13" font-weight="850">separación lateral</text>
+            <text x="404" y="230" fill="#087c8a" font-size="13" font-weight="850">separación lateral</text>
             <text x="174" y="102" transform="rotate(-16 174 102)" fill="#b43e4b" font-size="13" font-weight="850">hipotenusa</text>
             <text x="116" y="144" fill="#9b5515" font-size="13" font-weight="850">ángulo θ</text>
             <text x="116" y="198" fill="#087c8a" font-size="13" font-weight="850">ángulo θ</text>
@@ -446,7 +446,7 @@
           <div><strong>2. Recorrido</strong><span>La pieza avanza por la banda hasta llegar al desviador.</span></div>
           <div><strong>3. Desvío</strong><span>Desde el desviador se identifica el triángulo rectángulo.</span></div>
         </div>
-        <p class="slide-note">El documento proporciona (4.00\ \mathrm{m}) horizontales y (1.50\ \mathrm{m}) verticales para el ejemplo práctico. La distancia entre la báscula y el desviador debe medirse en la instalación.</p>
+        <p class="slide-note">El documento proporciona \(4.00\ \mathrm{m}\) horizontales y \(1.50\ \mathrm{m}\) verticales para un ejemplo de elevación. Para este sistema se mide el avance y la separación lateral reales.</p>
       </div>
     </section>
 
@@ -464,16 +464,16 @@
           </ol>
           <div>
             <div class="slide-card">
-              <h3>Lo que se calcula aquí</h3>
+              <h3>Ejemplo para el plano lateral</h3>
               <div class="slide-formula">\[
                 \begin{aligned}
-                  \text{horizontal} &= 4.00\ \mathrm{m}\\
-                  \text{vertical} &= 1.50\ \mathrm{m}\\
-                  \text{hipotenusa} &= 4.27\ \mathrm{m}\\
-                  \text{ángulo} &= 20.56^\circ
+                  \text{avance} &= 4.00\ \mathrm{m}\\
+                  \text{separación lateral} &= 1.50\ \mathrm{m}\\
+                  \text{ruta diagonal} &= 4.27\ \mathrm{m}\\
+                  \text{ángulo de desvío} &= 20.56^\circ
                 \end{aligned}
               \]</div>
-              <p>Estos números describen el tramo inclinado del ejercicio de manufactura.</p>
+              <p>Usamos los números de la guía para practicar el cálculo. Para el prototipo, se reemplazan por las medidas reales de la salida lateral.</p>
             </div>
             <div class="slide-measure-note" style="margin-top:14px;"><strong>Dato que falta para la instalación:</strong><p style="margin:8px 0 0; color:var(--muted);">medir la distancia desde la celda de carga hasta el punto donde actúa el desviador. Esa medida indica cuánto recorrido hace la pieza antes de ser empujada.</p></div>
           </div>
@@ -501,7 +501,7 @@
           <div>
             <div class="slide-card">
               <h3>Si el ángulo se mide desde la horizontal</h3>
-              <p>El horizontal es el cateto adyacente. El vertical es el cateto opuesto. El lado inclinado es la hipotenusa.</p>
+              <p>El avance es el cateto adyacente. La separación lateral es el cateto opuesto. La ruta diagonal es la hipotenusa.</p>
               <div class="slide-formula">\(\text{hipotenusa}^2=\text{adyacente}^2+\text{opuesto}^2\)</div>
             </div>
             <div class="slide-card" style="margin-top:14px;">
@@ -517,8 +517,8 @@
     <section class="slide slide-soft" data-title="Datos reales del ejercicio">
       <div class="slide-inner">
         <div class="slide-kicker">07 · Valores del documento</div>
-        <h2>Ahora sustituimos los datos</h2>
-        <p class="slide-lede">El ejercicio resuelto de manufactura dice: elevar piezas \(1.50\ \mathrm{m}\), con \(4.00\ \mathrm{m}\) horizontales. La inclinación máxima permitida es \(25^\circ\).</p>
+        <h2>El ejemplo numérico de la guía</h2>
+        <p class="slide-lede">La guía resuelve una banda que eleva piezas \(1.50\ \mathrm{m}\), con \(4.00\ \mathrm{m}\) horizontales. Este ejemplo enseña la cuenta, pero no describe la altura del desviador lateral.</p>
         <div class="slide-grid-2" style="margin-top: 24px;">
           <svg class="slide-svg" viewBox="0 0 560 360" role="img" aria-label="Ejemplo práctico con triángulo de 4 metros horizontales, 1.5 metros verticales, 4.27 metros de hipotenusa y ángulo de 20.56 grados">
             <g opacity=".5" stroke="#c7d8e4" stroke-width="1">
@@ -535,7 +535,7 @@
             <circle cx="70" cy="290" r="8" fill="#fff" stroke="#d8515d" stroke-width="4"/>
             <text x="57" y="315" fill="#d8515d" font-size="15" font-weight="850">O=(0,0)</text>
             <text x="185" y="317" fill="#183b56" font-size="17" font-weight="850">horizontal = 4.00 m</text>
-            <text x="458" y="220" fill="#9b5515" font-size="16" font-weight="850">vertical = 1.50 m</text>
+            <text x="458" y="220" fill="#9b5515" font-size="16" font-weight="850">elevación = 1.50 m</text>
             <text x="212" y="173" transform="rotate(-21 212 173)" fill="#b43e4b" font-size="16" font-weight="850">L = 4.27 m</text>
             <text x="124" y="260" fill="#9b5515" font-size="15" font-weight="850">θ = 20.56°</text>
             <text x="457" y="304" fill="#66758a" font-size="13">90°</text>
@@ -546,16 +546,16 @@
           </svg>
           <div>
             <div class="slide-card">
-              <h3>Datos colocados en el plano</h3>
+              <h3>Datos del ejemplo de la guía</h3>
               <table class="slide-table">
                 <tr><th>Variable</th><th>Valor</th></tr>
                 <tr><td>Cateto horizontal</td><td>\(4.00\ \mathrm{m}\)</td></tr>
-                <tr><td>Cateto vertical</td><td>\(1.50\ \mathrm{m}\)</td></tr>
+                <tr><td>Elevación</td><td>\(1.50\ \mathrm{m}\)</td></tr>
                 <tr><td>Ángulo máximo</td><td>\(25^\circ\)</td></tr>
               </table>
             </div>
             <div class="result" style="margin-top:14px;">
-              <strong>Lectura del gráfico:</strong> los datos forman un triángulo rectángulo. El horizontal y el vertical son los valores que se sustituyen después en Pitágoras y en la tangente.
+              <strong>Lectura del gráfico:</strong> estos datos forman un triángulo rectángulo de elevación. En el desviador real, se cambia la elevación por la separación lateral medida.
             </div>
             <div class="slide-formula" style="margin-top:14px;">\(\text{hipotenusa}=L,\qquad \theta\text{ se mide desde el piso horizontal}\)</div>
           </div>
@@ -567,7 +567,7 @@
     <section class="slide slide-white" data-title="Longitud">
       <div class="slide-inner">
         <div class="slide-kicker">08 · Cálculo 1 de 2</div>
-        <h2>Calculamos la longitud inclinada</h2>
+        <h2>Longitud del ejemplo de elevación</h2>
         <p class="slide-lede">Usamos el teorema de Pitágoras. Sustituimos primero y sacamos la raíz después.</p>
         <div class="slide-formula">
           \[
@@ -579,7 +579,7 @@
           \]
         </div>
         <div class="result">
-          <strong>Interpretación:</strong> el tramo inclinado que conecta las dos estaciones mide aproximadamente \(4.27\ \mathrm{m}\). Los \(4.00\ \mathrm{m}\) eran solo la distancia horizontal.
+          <strong>Interpretación:</strong> en el ejemplo de la guía, el tramo que eleva la pieza mide aproximadamente \(4.27\ \mathrm{m}\). Los \(4.00\ \mathrm{m}\) eran solo la distancia horizontal.
         </div>
       </div>
     </section>
@@ -587,7 +587,7 @@
     <section class="slide slide-soft" data-title="Ángulo">
       <div class="slide-inner">
         <div class="slide-kicker">09 · Cálculo 2 de 2</div>
-        <h2>El ángulo permite verificar el diseño</h2>
+        <h2>Ángulo del ejemplo de elevación</h2>
         <p class="slide-lede">Como conocemos el cateto opuesto y el adyacente, usamos tangente.</p>
         <div class="slide-formula">
           \[
@@ -601,16 +601,16 @@
           <div class="slide-card">
             <h3>Comparamos con el límite</h3>
             <div class="slide-formula">\[20.56^\circ < 25^\circ\]</div>
-            <p>La banda cumple el máximo de inclinación permitido.</p>
+            <p>La banda del ejemplo cumple el máximo de inclinación de la guía.</p>
           </div>
           <div class="slide-card">
             <h3>¿Por qué es importante calcularlo?</h3>
-            <p>Permite comprobar que la inclinación cumple el límite de (25^circ), y ayuda a definir la longitud del tramo y sus soportes.</p>
+            <p>En la guía, permite comprobar que la elevación cumple el límite de \(25^\circ\) y ayuda a definir la longitud del tramo.</p>
           </div>
         </div>
         <div class="slide-measure-note" style="margin-top: 22px;">
-          <strong>Si la inclinación no fuera correcta</strong>
-          <p>Si el ángulo supera (25^circ), la banda no cumple el requisito geométrico. Para disminuir el ángulo se debe aumentar la distancia horizontal, manteniendo la misma elevación. Después se revisan fricción, carga, velocidad y potencia.</p>
+          <strong>Aplicación correcta al desviador</strong>
+          <p>Para desviar lateralmente, se usa la misma tangente con avance y separación lateral. El valor máximo de giro debe definirse para el prototipo, no se toma automáticamente el \(25^\circ\) del ejemplo de elevación.</p>
         </div>
       </div>
     </section>
@@ -618,18 +618,18 @@
     <section class="slide slide-dark" data-title="Desviador">
       <div class="slide-inner">
         <div class="slide-kicker">10 · Aplicación al desviador neumático</div>
-        <h2>La misma cuenta se repite para cada rampa</h2>
-        <p class="slide-lede">Para el desviador, medimos desde su punto de acción hasta la entrada de cada rampa. Cada rampa tendrá su propio horizontal, vertical, longitud y ángulo.</p>
+        <h2>La misma cuenta se repite para cada salida</h2>
+        <p class="slide-lede">Para el desviador, medimos desde su punto de acción hasta cada banda de salida. Cada ruta tendrá su propio avance, separación lateral, longitud y ángulo de giro.</p>
         <div class="slide-grid-2" style="margin-top: 24px;">
           <div class="slide-card">
             <span class="route-chip heavy">Pieza pesada</span>
             <p>Cuando la pieza pesada llega y su rampa está libre, el desviador la envía a la rampa pesada.</p>
-            <div class="slide-formula">medir horizontal, vertical e inclinación de esta ruta</div>
+            <div class="slide-formula">medir avance, lateral y ángulo hacia la derecha</div>
           </div>
           <div class="slide-card">
             <span class="route-chip light">Pieza liviana</span>
             <p>Cuando la pieza liviana llega y su rampa está libre, el desviador la envía a la rampa liviana.</p>
-            <div class="slide-formula">medir horizontal, vertical e inclinación de esta ruta</div>
+            <div class="slide-formula">medir avance, lateral y ángulo hacia la izquierda</div>
           </div>
         </div>
         <div class="slide-note">El documento no trae las medidas físicas de estas dos rampas. Por eso no inventamos sus ángulos: se calculan cuando se midan en la planta.</div>
@@ -644,7 +644,7 @@
           <div>
             <ul class="slide-list">
               <li>Medir en la instalación las distancias reales de cada ruta.</li>
-              <li>Calcular la longitud y el ángulo de cada rampa.</li>
+              <li>Calcular la longitud y el ángulo lateral de cada salida.</li>
               <li>Usar esas medidas para construir o modelar el recorrido.</li>
               <li>Probar la báscula, la lógica y el desviador neumático.</li>
             </ul>
