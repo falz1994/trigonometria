@@ -233,7 +233,7 @@
     .slide-nav button:hover, .slide-nav button:focus-visible { background: var(--blue); outline: none; }
     .slide-count { position: absolute; left: 50%; transform: translateX(-50%); font-size: .86rem; }
     .slide-progress { position: absolute; right: 0; bottom: -8px; left: 0; height: 3px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.18); }
-    .slide-progress span { display: block; height: 100%; width: 7.69%; background: var(--orange); transition: width .25s ease; }
+    .slide-progress span { display: block; height: 100%; width: 8.33%; background: var(--orange); transition: width .25s ease; }
     .slide-table { width: 100%; border-collapse: collapse; }
     .slide-table th, .slide-table td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; }
     .slide-table th { background: #edf4f9; color: var(--navy); }
@@ -269,33 +269,17 @@
             <div class="slide-formula">\(\text{lógica} \longrightarrow \text{geometría} \longrightarrow \text{decisión}\)</div>
           </div>
           <div class="slide-card">
-            <h3>Ruta de aprendizaje</h3>
-            <ol style="margin:0; padding-left: 22px; color:var(--muted);">
-              <li>Describir el problema.</li>
-              <li>Dibujar el plano cartesiano.</li>
-              <li>Reconocer el triángulo.</li>
-              <li>Calcular con valores del documento.</li>
-              <li>Aplicarlo al desviador.</li>
-            </ol>
+            <h3>Integrantes</h3>
+            <ul style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px 14px; margin:0; padding:0; color:var(--muted); list-style:none;">
+              <li>Francisco Leiva</li>
+              <li>José Pérez</li>
+              <li>Humberto Carvajal</li>
+              <li>Erick Meza</li>
+              <li style="grid-column:1 / -1;">Alexander Peralta</li>
+            </ul>
           </div>
         </div>
         <p class="slide-note">Usa las flechas del teclado o los botones inferiores para avanzar.</p>
-      </div>
-    </section>
-
-    <section class="slide slide-soft" data-title="Integrantes">
-      <div class="slide-inner">
-        <div class="slide-kicker">Presentación</div>
-        <h2>Integrantes del equipo</h2>
-        <p class="slide-lede">Trabajo de planeación para el selector de rampa en una banda clasificadora.</p>
-        <div class="slide-grid-2" style="margin-top: 30px; max-width: 850px;">
-          <article class="slide-card"><h3>Francisco Leiva</h3><p>Integrante del equipo de trabajo.</p></article>
-          <article class="slide-card"><h3>José Pérez</h3><p>Integrante del equipo de trabajo.</p></article>
-          <article class="slide-card"><h3>Humberto Carvajal</h3><p>Integrante del equipo de trabajo.</p></article>
-          <article class="slide-card"><h3>Erick Meza</h3><p>Integrante del equipo de trabajo.</p></article>
-          <article class="slide-card" style="grid-column: 1 / -1; justify-self: center; width: min(100%, 400px);"><h3>Alexander Peralta</h3><p>Integrante del equipo de trabajo.</p></article>
-        </div>
-        <p class="slide-note">Taller Lubán Nicaragua · Matemática aplicada y planeación de un selector de rampa.</p>
       </div>
     </section>
 
@@ -700,7 +684,7 @@
   </main>
   <nav class="slide-nav" aria-label="Navegación de diapositivas">
     <button id="slidePrev" type="button" aria-label="Diapositiva anterior">← Anterior</button>
-    <span class="slide-count" id="slideCount">1 / 13</span>
+    <span class="slide-count" id="slideCount">1 / 12</span>
     <button id="slideNext" type="button" aria-label="Siguiente diapositiva">Siguiente →</button>
     <span class="slide-progress" aria-hidden="true"><span id="slideProgress"></span></span>
   </nav>
