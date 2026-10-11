@@ -307,26 +307,23 @@
         <p class="slide-lede">La lógica booleana ya indicó si el desviador puede actuar y qué tipo de pieza debe atender. Ahora la trigonometría convierte esa decisión en una geometría que se puede planificar.</p>
         <div class="slide-grid-3" style="margin-top: 28px;">
           <div class="slide-card">
-            <h3>1. Ubicar la ruta</h3>
-            <p>Medimos cuánto avanza la pieza horizontalmente y cuánto se separa hacia la rampa.</p>
-            <div class="slide-formula">\(\Delta x,\ \Delta y\)</div>
+            <h3>1. Medir los lados</h3>
+            <p>Identificamos la distancia horizontal y la distancia vertical del recorrido.</p>
           </div>
           <div class="slide-card">
-            <h3>2. Dimensionar el desvío</h3>
-            <p>Calculamos la longitud inclinada que debe cubrir la ruta y el ángulo que forma con la banda.</p>
-            <div class="slide-formula">\(L\) y \(\theta\)</div>
+            <h3>2. Formar el triángulo</h3>
+            <p>La distancia horizontal, la vertical y la inclinada forman un triángulo rectángulo.</p>
           </div>
           <div class="slide-card">
-            <h3>3. Verificar el diseño</h3>
-            <p>Comparamos el resultado con el límite permitido antes de definir soportes y posición del actuador.</p>
-            <div class="slide-formula">\(\theta \leq 25^\circ\)</div>
+            <h3>3. Calcular el ángulo</h3>
+            <p>Calculamos la hipotenusa y el ángulo para compararlo con el límite permitido.</p>
           </div>
         </div>
         <div class="slide-formula" style="margin-top: 26px;">
           \[
-            \underbrace{Y=A\cdot B+A'\cdot C}_{\text{decisión lógica}}
-            \quad\Longrightarrow\quad
-            \underbrace{\Delta x,\ \Delta y\ \Longrightarrow L,\ \theta}_{\text{planificación geométrica}}
+            L^2=(\text{horizontal})^2+(\text{vertical})^2
+            \qquad
+            \tan\theta=\frac{\text{vertical}}{\text{horizontal}}
           \]
         </div>
         <div class="slide-grid-2" style="margin-top: 16px;">
@@ -336,7 +333,7 @@
           </div>
           <div class="slide-card">
             <h3>Ejemplo del documento</h3>
-            <p>Con \(\Delta x=4.00\ \mathrm{m}\) y \(\Delta y=1.50\ \mathrm{m}\), se obtiene:</p>
+            <p>Con \(4.00\ \mathrm{m}\) horizontales y \(1.50\ \mathrm{m}\) verticales, se obtiene:</p>
             <div class="slide-formula">\(L\approx4.27\ \mathrm{m},\qquad \theta\approx20.56^\circ\)</div>
           </div>
         </div>
@@ -347,8 +344,8 @@
     <section class="slide slide-white" data-title="Recorrido completo">
       <div class="slide-inner">
         <div class="slide-kicker">03 · Modelo completo del recorrido</div>
-        <h2>De la báscula hasta la rampa: todas las variables</h2>
-        <p class="slide-lede">Este mapa reúne la lectura del peso, el recorrido sobre la banda, la decisión lógica y la geometría de las dos rutas. En las siguientes diapositivas se separa para calcular cada parte sin confundir las medidas.</p>
+        <h2>De la báscula hasta la rampa</h2>
+        <p class="slide-lede">Este mapa reúne la lectura del peso, el recorrido sobre la banda, el desviador neumático y las dos rutas. Después se separan las partes para calcular el triángulo con calma.</p>
         <div class="slide-wide-diagram">
         <svg class="slide-svg" viewBox="0 0 1100 440" role="img" aria-label="Recorrido completo desde la báscula al desviador y a las rampas con variables de lógica y geometría">
           <defs>
@@ -364,38 +361,38 @@
           <circle cx="175" cy="230" r="11" fill="#fff" stroke="#d8515d" stroke-width="5"/>
           <path d="M175 135V194" stroke="#d8515d" stroke-width="3" marker-end="url(#flowRed)"/>
           <text x="103" y="314" fill="#183b56" font-size="17" font-weight="850">Báscula + celda de carga</text>
-          <text x="115" y="338" fill="#b43e4b" font-size="15" font-weight="850">S=(0,0) · lectura A</text>
-          <text x="103" y="361" fill="#66758a" font-size="14">A=1 pesada · A=0 liviana</text>
+          <text x="115" y="338" fill="#b43e4b" font-size="15" font-weight="850">sensor de peso</text>
+          <text x="103" y="361" fill="#66758a" font-size="14">clasifica: pesada o liviana</text>
           <text x="145" y="122" fill="#b43e4b" font-size="15" font-weight="850">sensor de peso</text>
           <rect x="315" y="209" width="32" height="32" rx="5" fill="#f2c46d" stroke="#9b5515" stroke-width="2"/>
           <text x="290" y="196" fill="#9b5515" font-size="14" font-weight="850">objeto</text>
           <path d="M260 170H560M260 164V176M560 164V176" stroke="#d8515d" stroke-width="2"/>
           <path d="M350 225H550" stroke="#d8515d" stroke-width="5" stroke-dasharray="9 7" marker-end="url(#flowRed)"/>
-          <text x="350" y="155" fill="#b43e4b" font-size="16" font-weight="850">dₛ→D = distancia medida en planta</text>
+          <text x="350" y="155" fill="#b43e4b" font-size="16" font-weight="850">medir desde la báscula hasta el desviador</text>
           <text x="390" y="255" fill="#b43e4b" font-size="14">recorrido de la pieza sobre +x</text>
           <rect x="555" y="185" width="46" height="92" rx="7" fill="#d8515d"/>
           <circle cx="578" cy="230" r="10" fill="#fff" stroke="#d8515d" stroke-width="4"/>
           <path d="M602 230H646" stroke="#d8515d" stroke-width="7" marker-end="url(#flowRed)"/>
-          <text x="520" y="315" fill="#d8515d" font-size="17" font-weight="850">D · desviador neumático</text>
+          <text x="520" y="315" fill="#d8515d" font-size="17" font-weight="850">desviador neumático</text>
           <rect x="500" y="335" width="160" height="53" rx="12" fill="#fff8f0" stroke="#d5a46c" stroke-width="2"/>
-          <text x="518" y="357" fill="#9b5515" font-size="14" font-weight="850">Y=A·B + A′·C</text>
-          <text x="518" y="377" fill="#66758a" font-size="12">decide si el cilindro actúa</text>
+          <text x="518" y="357" fill="#9b5515" font-size="14" font-weight="850">actúa cuando la ruta</text>
+          <text x="518" y="377" fill="#66758a" font-size="12">correspondiente está libre</text>
           <path d="M578 230L905 104" stroke="#ed8b32" stroke-width="12" stroke-linecap="round" marker-end="url(#flowOrange)"/>
           <path d="M578 230L905 356" stroke="#19a7b8" stroke-width="12" stroke-linecap="round" marker-end="url(#flowCyan)"/>
           <path d="M578 230H905M905 230V104M905 230V356" stroke="#8ca2b2" stroke-width="2" stroke-dasharray="7 7"/>
           <rect x="702" y="58" width="280" height="80" rx="14" fill="#fff9f1" stroke="#edc38f" stroke-width="2"/>
-          <text x="724" y="83" fill="#9b5515" font-size="16" font-weight="850">Rampa pesada · sensor B</text>
-          <text x="724" y="107" fill="#9b5515" font-size="14">Δxₚ, Δyₚ ⟶ Lₚ, +θₚ</text>
-          <text x="724" y="126" fill="#66758a" font-size="12">B=1: rampa pesada libre</text>
+          <text x="724" y="83" fill="#9b5515" font-size="16" font-weight="850">Rampa para pieza pesada</text>
+          <text x="724" y="107" fill="#9b5515" font-size="14">horizontal, vertical, hipotenusa y ángulo</text>
+          <text x="724" y="126" fill="#66758a" font-size="12">usar las medidas de esta ruta</text>
           <rect x="702" y="310" width="280" height="80" rx="14" fill="#f1fbfc" stroke="#8bd3dc" stroke-width="2"/>
-          <text x="724" y="335" fill="#087c8a" font-size="16" font-weight="850">Rampa liviana · sensor C</text>
-          <text x="724" y="359" fill="#087c8a" font-size="14">Δxₗ, Δyₗ ⟶ Lₗ, −θₗ</text>
-          <text x="724" y="378" fill="#66758a" font-size="12">C=1: rampa liviana libre</text>
+          <text x="724" y="335" fill="#087c8a" font-size="16" font-weight="850">Rampa para pieza liviana</text>
+          <text x="724" y="359" fill="#087c8a" font-size="14">horizontal, vertical, hipotenusa y ángulo</text>
+          <text x="724" y="378" fill="#66758a" font-size="12">usar las medidas de esta ruta</text>
           <text x="952" y="219" fill="#183b56" font-size="14" font-weight="850">+x</text>
           <text x="113" y="75" fill="#183b56" font-size="14" font-weight="850">+y</text>
         </svg>
         </div>
-        <p class="slide-note">Variables del recorrido: \(A,B,C,Y,d_{S\to D},\Delta x,\Delta y,L,\theta\). Las letras con subíndice \(p\) pertenecen a la rampa pesada y las de subíndice \(l\) a la liviana.</p>
+        <p class="slide-note">Antes de calcular, identifica cuatro elementos: distancia horizontal, distancia vertical, hipotenusa y ángulo.</p>
       </div>
     </section>
 
@@ -403,7 +400,7 @@
       <div class="slide-inner">
         <div class="slide-kicker">04 · Plano cartesiano abstracto</div>
         <h2>Ubicamos el sensor, el recorrido y el desviador</h2>
-        <p class="slide-lede">Usamos el eje \(x\) para seguir el avance de la pieza y el eje \(y\) para mostrar la separación hacia cada rampa. Hay dos referencias: el sensor de peso marca el inicio del recorrido; el desviador es el origen del triángulo de salida.</p>
+        <p class="slide-lede">Usamos el eje \(x\) para seguir el avance de la pieza y el eje \(y\) para mostrar la separación hacia cada rampa. Primero vemos el recorrido y después el triángulo rectángulo de la salida.</p>
         <div class="slide-map-panels" role="group" aria-label="Plano cartesiano separado en recorrido y triángulo de salida">
           <svg class="slide-svg" viewBox="0 0 520 315" role="img" aria-label="Recorrido desde la báscula y sensor S hasta el desviador D">
             <defs>
@@ -420,17 +417,17 @@
             <text x="101" y="246" fill="#183b56" font-size="15" font-weight="850">Báscula</text>
             <text x="101" y="264" fill="#66758a" font-size="13">celda de carga</text>
             <text x="130" y="92" fill="#b43e4b" font-size="14" font-weight="850">sensor de peso</text>
-            <text x="145" y="213" fill="#b43e4b" font-size="13" font-weight="850">S=(0,0)</text>
+            <text x="145" y="213" fill="#b43e4b" font-size="13" font-weight="850">inicio del recorrido</text>
             <rect x="274" y="166" width="28" height="28" rx="5" fill="#f2c46d" stroke="#9b5515" stroke-width="2"/>
             <text x="268" y="151" fill="#9b5515" font-size="13" font-weight="850">objeto</text>
             <path d="M300 180H405" stroke="#d8515d" stroke-width="5" stroke-dasharray="8 6" marker-end="url(#mapArrowRedA)"/>
             <path d="M170 115H405M170 109V121M405 109V121" stroke="#d8515d" stroke-width="2"/>
-            <text x="202" y="102" fill="#b43e4b" font-size="14" font-weight="850">d<tspan baseline-shift="sub" font-size="10">S→D</tspan> = medir</text>
+            <text x="202" y="102" fill="#b43e4b" font-size="14" font-weight="850">distancia por medir</text>
             <text x="252" y="215" fill="#b43e4b" font-size="13">recorrido sobre +x</text>
             <rect x="400" y="151" width="30" height="68" rx="6" fill="#d8515d"/>
             <path d="M430 185H468" stroke="#d8515d" stroke-width="6" marker-end="url(#mapArrowRedA)"/>
             <circle cx="415" cy="185" r="8" fill="#fff" stroke="#d8515d" stroke-width="4"/>
-            <text x="370" y="246" fill="#d8515d" font-size="15" font-weight="850">D · desviador</text>
+            <text x="370" y="246" fill="#d8515d" font-size="15" font-weight="850">desviador</text>
             <text x="409" y="265" fill="#66758a" font-size="13">+x</text>
           </svg>
           <svg class="slide-svg" viewBox="0 0 520 315" role="img" aria-label="Triángulo local desde el desviador hacia las rampas pesada y liviana">
@@ -439,7 +436,7 @@
               <marker id="mapArrowOrangeB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#ed8b32"/></marker>
               <marker id="mapArrowCyanB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#19a7b8"/></marker>
             </defs>
-            <text x="22" y="29" fill="#183b56" font-size="18" font-weight="850">B. Triángulo local desde D</text>
+            <text x="22" y="29" fill="#183b56" font-size="18" font-weight="850">B. Triángulo de salida</text>
             <path d="M72 255V65" stroke="#183b56" stroke-width="2" marker-end="url(#mapArrowNavyB)"/>
             <path d="M72 165H475" stroke="#183b56" stroke-width="4" stroke-linecap="round" marker-end="url(#mapArrowNavyB)"/>
             <path d="M72 165L397 72" stroke="#ed8b32" stroke-width="9" stroke-linecap="round" marker-end="url(#mapArrowOrangeB)"/>
@@ -447,13 +444,13 @@
             <path d="M72 165H397M397 165V72M397 165V258" stroke="#8ca2b2" stroke-width="2" stroke-dasharray="7 6"/>
             <path d="M72 165L104 165L104 135" fill="none" stroke="#8ca2b2" stroke-width="2"/>
             <circle cx="72" cy="165" r="9" fill="#fff" stroke="#d8515d" stroke-width="4"/>
-            <text x="44" y="190" fill="#d8515d" font-size="14" font-weight="850">D=(0,0)</text>
-            <text x="215" y="151" fill="#183b56" font-size="14" font-weight="850">Δx = 4.00 m</text>
-            <text x="404" y="112" fill="#9b5515" font-size="13" font-weight="850">Δy = +1.50 m</text>
-            <text x="404" y="230" fill="#087c8a" font-size="13" font-weight="850">Δy = −1.50 m</text>
-            <text x="174" y="102" transform="rotate(-16 174 102)" fill="#b43e4b" font-size="13" font-weight="850">L = 4.27 m</text>
-            <text x="116" y="144" fill="#9b5515" font-size="13" font-weight="850">+θ = 20.56°</text>
-            <text x="116" y="198" fill="#087c8a" font-size="13" font-weight="850">−θ = 20.56°</text>
+            <text x="44" y="190" fill="#d8515d" font-size="14" font-weight="850">inicio</text>
+            <text x="215" y="151" fill="#183b56" font-size="14" font-weight="850">cateto horizontal</text>
+            <text x="404" y="112" fill="#9b5515" font-size="13" font-weight="850">cateto vertical</text>
+            <text x="404" y="230" fill="#087c8a" font-size="13" font-weight="850">cateto vertical</text>
+            <text x="174" y="102" transform="rotate(-16 174 102)" fill="#b43e4b" font-size="13" font-weight="850">hipotenusa</text>
+            <text x="116" y="144" fill="#9b5515" font-size="13" font-weight="850">ángulo θ</text>
+            <text x="116" y="198" fill="#087c8a" font-size="13" font-weight="850">ángulo θ</text>
             <text x="340" y="60" fill="#9b5515" font-size="14" font-weight="850">rampa pesada</text>
             <text x="340" y="286" fill="#087c8a" font-size="14" font-weight="850">rampa liviana</text>
             <text x="78" y="62" fill="#183b56" font-size="13" font-weight="850">+y</text>
@@ -461,11 +458,11 @@
           </svg>
         </div>
         <div class="slide-map-caption">
-          <div><strong>1. Sensor en S</strong><span>La celda de carga está en la báscula y decide \(A=1\) o \(A=0\).</span></div>
-          <div><strong>2. Recorrido S → D</strong><span>La pieza avanza por la banda una distancia \(d_{S\to D}\), que se debe medir.</span></div>
-          <div><strong>3. Desvío en D</strong><span>Desde D se calcula el triángulo con \(4.00\ \mathrm{m}\) y \(1.50\ \mathrm{m}\).</span></div>
+          <div><strong>1. Sensor de peso</strong><span>La celda de carga clasifica la pieza en la báscula.</span></div>
+          <div><strong>2. Recorrido</strong><span>La pieza avanza por la banda hasta llegar al desviador.</span></div>
+          <div><strong>3. Desvío</strong><span>Desde el desviador se identifica el triángulo rectángulo.</span></div>
         </div>
-        <p class="slide-note">El documento sí proporciona los \(4.00\ \mathrm{m}\) horizontales y \(1.50\ \mathrm{m}\) verticales del tramo inclinado. No proporciona una medida sensor–desviador; por eso la mostramos como \(d_{S\to D}\) pendiente de medir, sin inventar un valor.</p>
+        <p class="slide-note">El documento proporciona (4.00\ \mathrm{m}) horizontales y (1.50\ \mathrm{m}) verticales para el ejemplo práctico. La distancia entre la báscula y el desviador debe medirse en la instalación.</p>
       </div>
     </section>
 
@@ -475,26 +472,26 @@
         <h2>¿Qué ocurre desde que llega el objeto?</h2>
         <div class="slide-route-grid" style="margin-top: 24px;">
           <ol class="slide-route-list">
-            <li><strong>Llega a la báscula.</strong><p>La pieza entra por la banda y se ubica sobre la celda de carga en el punto \(S\).</p></li>
-            <li><strong>Se obtiene el peso.</strong><p>El sistema convierte la lectura en \(A=1\) si es pesada o \(A=0\) si es liviana.</p></li>
-            <li><strong>Recorre la banda.</strong><p>La distancia desde el sensor hasta el desviador es \(d_{S\to D}\). Se mide siguiendo el eje \(x\).</p></li>
-            <li><strong>Llega al punto D.</strong><p>Los sensores \(B\) y \(C\) informan si las rampas correspondientes están libres.</p></li>
-            <li><strong>Se ejecuta el desvío.</strong><p>La lógica \(Y=A\cdot B+A'\cdot C\) habilita el cilindro y la geometría define \(+\theta\) o \(-\theta\).</p></li>
+            <li><strong>Llega a la báscula.</strong><p>La pieza entra por la banda y pasa sobre la celda de carga.</p></li>
+            <li><strong>Se obtiene el peso.</strong><p>La báscula identifica si la pieza es pesada o liviana.</p></li>
+            <li><strong>Recorre la banda.</strong><p>La pieza avanza desde la báscula hasta el desviador. Esa distancia se mide en la instalación.</p></li>
+            <li><strong>Llega al desviador.</strong><p>El sistema revisa si la rampa que corresponde está libre.</p></li>
+            <li><strong>Se ejecuta el desvío.</strong><p>El cilindro neumático envía la pieza a la rampa que le corresponde.</p></li>
           </ol>
           <div>
             <div class="slide-card">
               <h3>Lo que se calcula aquí</h3>
               <div class="slide-formula">\[
                 \begin{aligned}
-                  \Delta x &= 4.00\ \mathrm{m}\\
-                  \Delta y &= 1.50\ \mathrm{m}\\
-                  L &= 4.27\ \mathrm{m}\\
-                  \theta &= 20.56^\circ
+                  \text{horizontal} &= 4.00\ \mathrm{m}\\
+                  \text{vertical} &= 1.50\ \mathrm{m}\\
+                  \text{hipotenusa} &= 4.27\ \mathrm{m}\\
+                  \text{ángulo} &= 20.56^\circ
                 \end{aligned}
               \]</div>
               <p>Estos números describen el tramo inclinado del ejercicio de manufactura.</p>
             </div>
-            <div class="slide-measure-note" style="margin-top:14px;"><strong>Dato que falta para la instalación:</strong><p style="margin:8px 0 0; color:var(--muted);">medir físicamente \(d_{S\to D}\), desde el centro de la celda de carga hasta el punto donde actúa el desviador. Esa distancia determina cuánto recorrido hace la pieza antes de ser empujada.</p></div>
+            <div class="slide-measure-note" style="margin-top:14px;"><strong>Dato que falta para la instalación:</strong><p style="margin:8px 0 0; color:var(--muted);">medir la distancia desde la celda de carga hasta el punto donde actúa el desviador. Esa medida indica cuánto recorrido hace la pieza antes de ser empujada.</p></div>
           </div>
         </div>
       </div>
@@ -553,8 +550,8 @@
             <path d="M135 290 A65 65 0 0 0 130 266" fill="none" stroke="#ed8b32" stroke-width="3"/>
             <circle cx="70" cy="290" r="8" fill="#fff" stroke="#d8515d" stroke-width="4"/>
             <text x="57" y="315" fill="#d8515d" font-size="15" font-weight="850">O=(0,0)</text>
-            <text x="185" y="317" fill="#183b56" font-size="17" font-weight="850">Δx = 4.00 m</text>
-            <text x="458" y="220" fill="#9b5515" font-size="16" font-weight="850">Δy = 1.50 m</text>
+            <text x="185" y="317" fill="#183b56" font-size="17" font-weight="850">horizontal = 4.00 m</text>
+            <text x="458" y="220" fill="#9b5515" font-size="16" font-weight="850">vertical = 1.50 m</text>
             <text x="212" y="173" transform="rotate(-21 212 173)" fill="#b43e4b" font-size="16" font-weight="850">L = 4.27 m</text>
             <text x="124" y="260" fill="#9b5515" font-size="15" font-weight="850">θ = 20.56°</text>
             <text x="457" y="304" fill="#66758a" font-size="13">90°</text>
@@ -568,8 +565,8 @@
               <h3>Datos colocados en el plano</h3>
               <table class="slide-table">
                 <tr><th>Variable</th><th>Valor</th></tr>
-                <tr><td>Cateto horizontal \(\Delta x\)</td><td>\(4.00\ \mathrm{m}\)</td></tr>
-                <tr><td>Cateto vertical \(\Delta y\)</td><td>\(1.50\ \mathrm{m}\)</td></tr>
+                <tr><td>Cateto horizontal</td><td>\(4.00\ \mathrm{m}\)</td></tr>
+                <tr><td>Cateto vertical</td><td>\(1.50\ \mathrm{m}\)</td></tr>
                 <tr><td>Ángulo máximo</td><td>\(25^\circ\)</td></tr>
               </table>
             </div>
@@ -638,13 +635,13 @@
         <div class="slide-grid-2" style="margin-top: 24px;">
           <div class="slide-card">
             <span class="route-chip heavy">Pieza pesada</span>
-            <p>Si \(A=1\) y \(B=1\), el desviador puede dirigirse a la rampa pesada.</p>
-            <div class="slide-formula">\[Y=A\cdot B=1\quad\Rightarrow\quad +\theta_{\mathrm{pesada}}\]</div>
+            <p>Cuando la pieza pesada llega y su rampa está libre, el desviador la envía a la rampa pesada.</p>
+            <div class="slide-formula">medir horizontal, vertical e inclinación de esta ruta</div>
           </div>
           <div class="slide-card">
             <span class="route-chip light">Pieza liviana</span>
-            <p>Si \(A=0\) y \(C=1\), el desviador puede dirigirse a la rampa liviana.</p>
-            <div class="slide-formula">\[Y=A'\cdot C=1\quad\Rightarrow\quad -\theta_{\mathrm{liviana}}\]</div>
+            <p>Cuando la pieza liviana llega y su rampa está libre, el desviador la envía a la rampa liviana.</p>
+            <div class="slide-formula">medir horizontal, vertical e inclinación de esta ruta</div>
           </div>
         </div>
         <div class="slide-note">El documento no trae las medidas físicas de estas dos rampas. Por eso no inventamos sus ángulos: se calculan cuando se midan en la planta.</div>
