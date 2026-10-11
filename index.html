@@ -190,6 +190,9 @@
     .slide h3 { margin: 0 0 10px; font-size: 1.15rem; }
     .slide-lede { max-width: 800px; color: var(--muted); font-size: clamp(1.05rem, 1.8vw, 1.35rem); }
     .slide-cover { background: radial-gradient(circle at 82% 20%, rgba(45,125,210,.22), transparent 30rem), var(--paper); }
+    .cover-team { max-width: 920px; margin-top: 24px; padding-top: 18px; border-top: 2px solid var(--line); }
+    .cover-team strong { display: block; margin-bottom: 12px; color: var(--navy); font-size: 1.05rem; }
+    .cover-team ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 20px; margin: 0; padding: 0; list-style: none; color: var(--ink); font-weight: 750; }
     .slide-soft { background: #f6f8fb; }
     .slide-white { background: #fff; }
     .slide-dark { color: #f6fbff; background: linear-gradient(135deg, #102a40, #0b1424); }
@@ -248,6 +251,7 @@
       .slide { padding: 34px 22px 100px; }
       .slide-grid-2, .slide-grid-3 { grid-template-columns: 1fr; }
       .slide-map-caption, .slide-route-grid, .slide-map-panels { grid-template-columns: 1fr; }
+      .cover-team ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .slide-wide-diagram .slide-svg { min-width: 900px; }
       .slide h1 { font-size: clamp(2.45rem, 12vw, 4rem); }
       .slide h2 { font-size: clamp(2rem, 9vw, 3rem); }
@@ -262,22 +266,16 @@
         <div class="slide-kicker">Presentación · Matemática aplicada</div>
         <h1>Del problema a la decisión</h1>
         <p class="slide-lede">Cómo usar un triángulo rectángulo para explicar el ángulo de una banda y orientar un desviador neumático.</p>
-        <div class="slide-grid-2" style="margin-top: 34px;">
-          <div class="slide-card">
-            <h3>La idea central</h3>
-            <p>Primero entendemos qué pieza llega y qué rampa está libre. Después medimos la geometría y calculamos el ángulo.</p>
-            <div class="slide-formula">\(\text{lógica} \longrightarrow \text{geometría} \longrightarrow \text{decisión}\)</div>
-          </div>
-          <div class="slide-card">
-            <h3>Integrantes</h3>
-            <ul style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px 14px; margin:0; padding:0; color:var(--muted); list-style:none;">
-              <li>Francisco Leiva</li>
-              <li>José Pérez</li>
-              <li>Humberto Carvajal</li>
-              <li>Erick Meza</li>
-              <li style="grid-column:1 / -1;">Alexander Peralta</li>
-            </ul>
-          </div>
+        <div class="slide-formula" style="max-width: 720px; margin-top: 24px;">\(\text{lógica} \longrightarrow \text{geometría} \longrightarrow \text{decisión}\)</div>
+        <div class="cover-team" aria-label="Integrantes del equipo">
+          <strong>Integrantes</strong>
+          <ul>
+            <li>Francisco Leiva</li>
+            <li>José Pérez</li>
+            <li>Humberto Carvajal</li>
+            <li>Erick Meza</li>
+            <li>Alexander Peralta</li>
+          </ul>
         </div>
         <p class="slide-note">Usa las flechas del teclado o los botones inferiores para avanzar.</p>
       </div>
