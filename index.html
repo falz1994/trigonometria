@@ -236,13 +236,37 @@
     .slide-nav button:hover, .slide-nav button:focus-visible { background: var(--blue); outline: none; }
     .slide-count { position: absolute; left: 50%; transform: translateX(-50%); font-size: .86rem; }
     .slide-progress { position: absolute; right: 0; bottom: -8px; left: 0; height: 3px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.18); }
-    .slide-progress span { display: block; height: 100%; width: 8.33%; background: var(--orange); transition: width .25s ease; }
+    .slide-progress span { display: block; height: 100%; width: 7.69%; background: var(--orange); transition: width .25s ease; }
     .slide-table { width: 100%; border-collapse: collapse; }
     .slide-table th, .slide-table td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; }
     .slide-table th { background: #edf4f9; color: var(--navy); }
     .route-chip { display: inline-flex; margin-bottom: 12px; padding: 5px 10px; border-radius: 99px; color: #fff; font-size: .78rem; font-weight: 850; }
     .route-chip.heavy { background: var(--orange); }
     .route-chip.light { background: var(--cyan); }
+    .diverter-demo { margin-top: 22px; padding: 14px; border: 1px solid var(--line); border-radius: 20px; background: #f7fbfd; }
+    .diverter-demo svg { display: block; width: 100%; height: auto; }
+    .diverter-demo text { font-family: Inter, ui-sans-serif, system-ui, sans-serif; paint-order: stroke; stroke: #f7fbfd; stroke-width: 4px; stroke-linejoin: round; }
+    .demo-heavy, .demo-light { opacity: 0; transform-box: fill-box; transform-origin: center; }
+    .demo-heavy { animation: demo-heavy 10s linear infinite; }
+    .demo-light { animation: demo-light 10s linear infinite; }
+    .demo-pulse-heavy { animation: demo-pulse-heavy 10s linear infinite; }
+    .demo-pulse-light { animation: demo-pulse-light 10s linear infinite; }
+    @keyframes demo-heavy {
+      0%, 4% { opacity: 0; transform: translate(0, 0); }
+      7% { opacity: 1; transform: translate(0, 0); }
+      40% { opacity: 1; transform: translate(250px, 0); }
+      62% { opacity: 1; transform: translate(500px, -120px); }
+      67%, 100% { opacity: 0; transform: translate(530px, -120px); }
+    }
+    @keyframes demo-light {
+      0%, 52% { opacity: 0; transform: translate(0, 0); }
+      55% { opacity: 1; transform: translate(0, 0); }
+      78% { opacity: 1; transform: translate(250px, 0); }
+      97% { opacity: 1; transform: translate(500px, 120px); }
+      100% { opacity: 0; transform: translate(530px, 120px); }
+    }
+    @keyframes demo-pulse-heavy { 0%, 35%, 67%, 100% { opacity: .18; } 40%, 60% { opacity: 1; } }
+    @keyframes demo-pulse-light { 0%, 62%, 100% { opacity: .18; } 67%, 92% { opacity: 1; } }
     .slide-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
     .slide-list li { display: grid; grid-template-columns: 24px 1fr; gap: 9px; align-items: start; }
     .slide-list li::before { content: "✓"; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #d9f3ea; color: var(--green); font-weight: 900; }
@@ -256,6 +280,10 @@
       .slide h1 { font-size: clamp(2.45rem, 12vw, 4rem); }
       .slide h2 { font-size: clamp(2rem, 9vw, 3rem); }
       .slide-nav { right: 12px; bottom: 12px; left: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .demo-heavy, .demo-light, .demo-pulse-heavy, .demo-pulse-light { animation: none; }
+      .demo-heavy, .demo-light { opacity: 1; }
     }
   </style>
 </head>
@@ -481,9 +509,44 @@
       </div>
     </section>
 
+    <section class="slide slide-soft" data-title="Animación del desviador">
+      <div class="slide-inner">
+        <div class="slide-kicker">06 · Animación del desvío</div>
+        <h2>Así trabaja el desviador visto desde arriba</h2>
+        <p class="slide-lede">La pieza pesada sigue el carril de la derecha. Después, la pieza liviana sigue el carril de la izquierda. La banda no se detiene.</p>
+        <div class="diverter-demo">
+          <svg viewBox="0 0 1000 400" role="img" aria-label="Animación de una pieza pesada hacia la salida derecha y una pieza liviana hacia la salida izquierda">
+            <defs>
+              <marker id="demoArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#183b56"/></marker>
+            </defs>
+            <path d="M55 200H555" stroke="#183b56" stroke-width="92" stroke-linecap="round"/>
+            <path d="M555 200L895 82" stroke="#ed8b32" stroke-width="78" stroke-linecap="round"/>
+            <path d="M555 200L895 318" stroke="#19a7b8" stroke-width="78" stroke-linecap="round"/>
+            <path d="M50 200H924" stroke="#d8e3eb" stroke-width="3" stroke-dasharray="11 11" marker-end="url(#demoArrow)"/>
+            <circle cx="555" cy="200" r="38" fill="#fff" stroke="#d8515d" stroke-width="8"/>
+            <path class="demo-pulse-heavy" d="M540 200L590 152" stroke="#d8515d" stroke-width="11" stroke-linecap="round"/>
+            <path class="demo-pulse-light" d="M540 200L590 248" stroke="#d8515d" stroke-width="11" stroke-linecap="round"/>
+            <text x="60" y="128" fill="#183b56" font-size="18" font-weight="850">banda principal</text>
+            <text x="738" y="42" fill="#9b5515" font-size="18" font-weight="850">salida derecha</text>
+            <text x="738" y="374" fill="#087c8a" font-size="18" font-weight="850">salida izquierda</text>
+            <text x="492" y="266" fill="#b43e4b" font-size="16" font-weight="850">desviador neumático</text>
+            <g class="demo-heavy">
+              <rect x="92" y="178" width="58" height="44" rx="10" fill="#ed8b32" stroke="#9b5515" stroke-width="3"/>
+              <text x="102" y="206" fill="#fff" font-size="13" font-weight="900" style="stroke:none;">pesada</text>
+            </g>
+            <g class="demo-light">
+              <rect x="92" y="178" width="58" height="44" rx="10" fill="#19a7b8" stroke="#087c8a" stroke-width="3"/>
+              <text x="103" y="206" fill="#fff" font-size="13" font-weight="900" style="stroke:none;">liviana</text>
+            </g>
+          </svg>
+        </div>
+        <p class="slide-note">La animación se repite: naranja = pieza pesada hacia la derecha; turquesa = pieza liviana hacia la izquierda.</p>
+      </div>
+    </section>
+
     <section class="slide slide-white" data-title="Triángulo">
       <div class="slide-inner">
-        <div class="slide-kicker">06 · El triángulo rectángulo</div>
+        <div class="slide-kicker">07 · El triángulo rectángulo</div>
         <h2>El carril que conecta con la salida</h2>
         <div class="slide-grid-2">
           <svg class="slide-svg" viewBox="0 0 560 340" role="img" aria-label="Triángulo rectángulo con avance, desplazamiento lateral y ruta diagonal">
@@ -516,7 +579,7 @@
 
     <section class="slide slide-soft" data-title="Ejemplo lateral">
       <div class="slide-inner">
-        <div class="slide-kicker">07 · Ejemplo numérico</div>
+        <div class="slide-kicker">08 · Ejemplo numérico</div>
         <h2>Ejemplo de desvío lateral</h2>
         <p class="slide-lede">Para practicar la cuenta, suponemos que desde el desviador hasta una salida hay \(4.00\ \mathrm{m}\) de avance y \(1.50\ \mathrm{m}\) de desplazamiento lateral.</p>
         <div class="slide-grid-2" style="margin-top: 24px;">
@@ -566,7 +629,7 @@
 
     <section class="slide slide-white" data-title="Longitud">
       <div class="slide-inner">
-        <div class="slide-kicker">08 · Cálculo 1 de 2</div>
+        <div class="slide-kicker">09 · Cálculo 1 de 2</div>
         <h2>Longitud de la ruta lateral</h2>
         <p class="slide-lede">Usamos el teorema de Pitágoras. Sustituimos primero y sacamos la raíz después.</p>
         <div class="slide-formula">
@@ -586,7 +649,7 @@
 
     <section class="slide slide-soft" data-title="Ángulo">
       <div class="slide-inner">
-        <div class="slide-kicker">09 · Cálculo 2 de 2</div>
+        <div class="slide-kicker">10 · Cálculo 2 de 2</div>
         <h2>Ángulo de desvío</h2>
         <p class="slide-lede">Como conocemos el avance y el desplazamiento lateral, usamos tangente.</p>
         <div class="slide-formula">
@@ -617,7 +680,7 @@
 
     <section class="slide slide-dark" data-title="Desviador">
       <div class="slide-inner">
-        <div class="slide-kicker">10 · Aplicación al desviador neumático</div>
+        <div class="slide-kicker">11 · Aplicación al desviador neumático</div>
         <h2>La misma cuenta se repite para cada salida</h2>
         <p class="slide-lede">Para el desviador, medimos desde su punto de acción hasta cada banda de salida. Cada ruta tendrá su propio avance, separación lateral, longitud y ángulo de giro.</p>
         <div class="slide-grid-2" style="margin-top: 24px;">
@@ -638,7 +701,7 @@
 
     <section class="slide slide-white" data-title="Cierre">
       <div class="slide-inner">
-        <div class="slide-kicker">11 · Cierre y siguiente paso</div>
+        <div class="slide-kicker">12 · Cierre y siguiente paso</div>
         <h2>Del cálculo al prototipo</h2>
         <div class="slide-grid-2">
           <div>
