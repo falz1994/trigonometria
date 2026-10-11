@@ -214,6 +214,7 @@
     .slide-map-caption > div { padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
     .slide-map-caption strong { display: block; margin-bottom: 4px; color: var(--navy); }
     .slide-map-caption span { color: var(--muted); font-size: .9rem; }
+    .slide-map-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .slide-route-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 22px; align-items: start; }
     .slide-route-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; counter-reset: route; }
     .slide-route-list li { position: relative; padding: 15px 16px 15px 52px; border: 1px solid var(--line); border-radius: 16px; background: #fff; counter-increment: route; }
@@ -244,7 +245,7 @@
       body.slides-view { overflow: auto; }
       .slide { padding: 34px 22px 100px; }
       .slide-grid-2, .slide-grid-3 { grid-template-columns: 1fr; }
-      .slide-map-caption, .slide-route-grid { grid-template-columns: 1fr; }
+      .slide-map-caption, .slide-route-grid, .slide-map-panels { grid-template-columns: 1fr; }
       .slide h1 { font-size: clamp(2.45rem, 12vw, 4rem); }
       .slide h2 { font-size: clamp(2rem, 9vw, 3rem); }
       .slide-nav { right: 12px; bottom: 12px; left: 12px; }
@@ -303,53 +304,62 @@
         <div class="slide-kicker">02 · Plano cartesiano abstracto</div>
         <h2>Ubicamos el sensor, el recorrido y el desviador</h2>
         <p class="slide-lede">Usamos el eje \(x\) para seguir el avance de la pieza y el eje \(y\) para mostrar la separación hacia cada rampa. Hay dos referencias: el sensor de peso marca el inicio del recorrido; el desviador es el origen del triángulo de salida.</p>
-        <svg class="slide-svg" viewBox="0 0 1000 470" role="img" aria-label="Plano cartesiano con báscula, sensor de peso, recorrido de la pieza, desviador neumático y dos rampas">
-          <defs>
-            <marker id="sArrowNavy" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#183b56"/></marker>
-            <marker id="sArrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#ed8b32"/></marker>
-            <marker id="sArrowCyan" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#19a7b8"/></marker>
-            <marker id="sArrowRed" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#d8515d"/></marker>
-          </defs>
-          <g opacity=".45" stroke="#c7d8e4" stroke-width="1">
-            <path d="M80 100H940M80 170H940M80 240H940M80 310H940M80 380H940"/>
-            <path d="M150 55V420M250 55V420M350 55V420M450 55V420M550 55V420M650 55V420M750 55V420M850 55V420"/>
-          </g>
-          <path d="M80 240H940" stroke="#183b56" stroke-width="5" stroke-linecap="round" marker-end="url(#sArrowNavy)"/>
-          <path d="M105 410V55" stroke="#183b56" stroke-width="3" marker-end="url(#sArrowNavy)"/>
-          <rect x="118" y="185" width="158" height="110" rx="12" fill="#eaf0f5" stroke="#183b56" stroke-width="3"/>
-          <path d="M135 220H258M135 255H258" stroke="#8ca2b2" stroke-width="7" stroke-linecap="round"/>
-          <circle cx="205" cy="240" r="12" fill="#fff" stroke="#d8515d" stroke-width="5"/>
-          <path d="M205 160V205" stroke="#d8515d" stroke-width="3" marker-end="url(#sArrowRed)"/>
-          <path d="M230 215L252 193M230 193L252 215" stroke="#d8515d" stroke-width="4" stroke-linecap="round"/>
-          <text x="126" y="330" fill="#183b56" font-size="16" font-weight="850">Báscula</text>
-          <text x="126" y="350" fill="#66758a" font-size="14">celda de carga</text>
-          <text x="214" y="153" fill="#b43e4b" font-size="15" font-weight="850">sensor de peso</text>
-          <text x="182" y="270" fill="#b43e4b" font-size="14" font-weight="850">S=(0,0)</text>
-          <path d="M274 210H440" stroke="#d8515d" stroke-width="5" stroke-dasharray="8 7" marker-end="url(#sArrowRed)"/>
-          <path d="M274 172H440M274 166V178M440 166V178" stroke="#d8515d" stroke-width="2"/>
-          <text x="300" y="158" fill="#b43e4b" font-size="15" font-weight="850">d<tspan baseline-shift="sub" font-size="11">S→D</tspan> = medir en planta</text>
-          <text x="304" y="230" fill="#b43e4b" font-size="14">distancia recorrida por la pieza</text>
-          <path d="M410 240H458" stroke="#183b56" stroke-width="9" stroke-linecap="round"/>
-          <rect x="450" y="205" width="36" height="70" rx="6" fill="#d8515d"/>
-          <path d="M486 240H530" stroke="#d8515d" stroke-width="7" marker-end="url(#sArrowRed)"/>
-          <circle cx="468" cy="240" r="9" fill="#fff" stroke="#d8515d" stroke-width="4"/>
-          <text x="423" y="304" fill="#d8515d" font-size="16" font-weight="850">D: desviador</text>
-          <text x="419" y="323" fill="#66758a" font-size="14">origen del triángulo</text>
-          <path d="M468 240L810 112" stroke="#ed8b32" stroke-width="12" stroke-linecap="round" marker-end="url(#sArrowOrange)"/>
-          <path d="M468 240L810 368" stroke="#19a7b8" stroke-width="12" stroke-linecap="round" marker-end="url(#sArrowCyan)"/>
-          <path d="M468 240H810M810 240V112M810 240V368" stroke="#8ca2b2" stroke-width="2" stroke-dasharray="7 7"/>
-          <path d="M530 240 A62 62 0 0 0 525 217" fill="none" stroke="#ed8b32" stroke-width="3"/>
-          <path d="M530 240 A62 62 0 0 1 525 263" fill="none" stroke="#19a7b8" stroke-width="3"/>
-          <text x="548" y="222" fill="#9b5515" font-size="15" font-weight="850">+θ pesada</text>
-          <text x="548" y="273" fill="#087c8a" font-size="15" font-weight="850">−θ liviana</text>
-          <text x="600" y="228" fill="#183b56" font-size="14" font-weight="850">Δx = 4.00 m</text>
-          <text x="820" y="168" fill="#9b5515" font-size="14" font-weight="850">Δy = +1.50 m</text>
-          <text x="820" y="320" fill="#087c8a" font-size="14" font-weight="850">Δy = −1.50 m</text>
-          <text x="690" y="116" fill="#9b5515" font-size="16" font-weight="850">rampa pesada</text>
-          <text x="690" y="394" fill="#087c8a" font-size="16" font-weight="850">rampa liviana</text>
-          <text x="910" y="225" fill="#183b56" font-size="14" font-weight="850">+x</text>
-          <text x="114" y="72" fill="#183b56" font-size="14" font-weight="850">+y</text>
-        </svg>
+        <div class="slide-map-panels" role="group" aria-label="Plano cartesiano separado en recorrido y triángulo de salida">
+          <svg class="slide-svg" viewBox="0 0 520 315" role="img" aria-label="Recorrido desde la báscula y sensor S hasta el desviador D">
+            <defs>
+              <marker id="mapArrowNavyA" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#183b56"/></marker>
+              <marker id="mapArrowRedA" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#d8515d"/></marker>
+            </defs>
+            <text x="22" y="29" fill="#183b56" font-size="18" font-weight="850">A. Recorrido de la pieza</text>
+            <path d="M54 185H478" stroke="#183b56" stroke-width="4" stroke-linecap="round" marker-end="url(#mapArrowNavyA)"/>
+            <path d="M75 260V70" stroke="#183b56" stroke-width="2" marker-end="url(#mapArrowNavyA)"/>
+            <rect x="83" y="145" width="145" height="80" rx="12" fill="#eaf0f5" stroke="#183b56" stroke-width="3"/>
+            <path d="M98 174H213M98 202H213" stroke="#8ca2b2" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="170" cy="185" r="10" fill="#fff" stroke="#d8515d" stroke-width="5"/>
+            <path d="M170 103V148" stroke="#d8515d" stroke-width="3" marker-end="url(#mapArrowRedA)"/>
+            <text x="101" y="246" fill="#183b56" font-size="15" font-weight="850">Báscula</text>
+            <text x="101" y="264" fill="#66758a" font-size="13">celda de carga</text>
+            <text x="130" y="92" fill="#b43e4b" font-size="14" font-weight="850">sensor de peso</text>
+            <text x="145" y="213" fill="#b43e4b" font-size="13" font-weight="850">S=(0,0)</text>
+            <rect x="274" y="166" width="28" height="28" rx="5" fill="#f2c46d" stroke="#9b5515" stroke-width="2"/>
+            <text x="268" y="151" fill="#9b5515" font-size="13" font-weight="850">objeto</text>
+            <path d="M300 180H405" stroke="#d8515d" stroke-width="5" stroke-dasharray="8 6" marker-end="url(#mapArrowRedA)"/>
+            <path d="M170 115H405M170 109V121M405 109V121" stroke="#d8515d" stroke-width="2"/>
+            <text x="202" y="102" fill="#b43e4b" font-size="14" font-weight="850">d<tspan baseline-shift="sub" font-size="10">S→D</tspan> = medir</text>
+            <text x="252" y="215" fill="#b43e4b" font-size="13">recorrido sobre +x</text>
+            <rect x="400" y="151" width="30" height="68" rx="6" fill="#d8515d"/>
+            <path d="M430 185H468" stroke="#d8515d" stroke-width="6" marker-end="url(#mapArrowRedA)"/>
+            <circle cx="415" cy="185" r="8" fill="#fff" stroke="#d8515d" stroke-width="4"/>
+            <text x="370" y="246" fill="#d8515d" font-size="15" font-weight="850">D · desviador</text>
+            <text x="409" y="265" fill="#66758a" font-size="13">+x</text>
+          </svg>
+          <svg class="slide-svg" viewBox="0 0 520 315" role="img" aria-label="Triángulo local desde el desviador hacia las rampas pesada y liviana">
+            <defs>
+              <marker id="mapArrowNavyB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#183b56"/></marker>
+              <marker id="mapArrowOrangeB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#ed8b32"/></marker>
+              <marker id="mapArrowCyanB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#19a7b8"/></marker>
+            </defs>
+            <text x="22" y="29" fill="#183b56" font-size="18" font-weight="850">B. Triángulo local desde D</text>
+            <path d="M72 255V65" stroke="#183b56" stroke-width="2" marker-end="url(#mapArrowNavyB)"/>
+            <path d="M72 165H475" stroke="#183b56" stroke-width="4" stroke-linecap="round" marker-end="url(#mapArrowNavyB)"/>
+            <path d="M72 165L397 72" stroke="#ed8b32" stroke-width="9" stroke-linecap="round" marker-end="url(#mapArrowOrangeB)"/>
+            <path d="M72 165L397 258" stroke="#19a7b8" stroke-width="9" stroke-linecap="round" marker-end="url(#mapArrowCyanB)"/>
+            <path d="M72 165H397M397 165V72M397 165V258" stroke="#8ca2b2" stroke-width="2" stroke-dasharray="7 6"/>
+            <path d="M72 165L104 165L104 135" fill="none" stroke="#8ca2b2" stroke-width="2"/>
+            <circle cx="72" cy="165" r="9" fill="#fff" stroke="#d8515d" stroke-width="4"/>
+            <text x="44" y="190" fill="#d8515d" font-size="14" font-weight="850">D=(0,0)</text>
+            <text x="215" y="151" fill="#183b56" font-size="14" font-weight="850">Δx = 4.00 m</text>
+            <text x="404" y="112" fill="#9b5515" font-size="13" font-weight="850">Δy = +1.50 m</text>
+            <text x="404" y="230" fill="#087c8a" font-size="13" font-weight="850">Δy = −1.50 m</text>
+            <text x="174" y="102" transform="rotate(-16 174 102)" fill="#b43e4b" font-size="13" font-weight="850">L = 4.27 m</text>
+            <text x="116" y="144" fill="#9b5515" font-size="13" font-weight="850">+θ = 20.56°</text>
+            <text x="116" y="198" fill="#087c8a" font-size="13" font-weight="850">−θ = 20.56°</text>
+            <text x="340" y="60" fill="#9b5515" font-size="14" font-weight="850">rampa pesada</text>
+            <text x="340" y="286" fill="#087c8a" font-size="14" font-weight="850">rampa liviana</text>
+            <text x="78" y="62" fill="#183b56" font-size="13" font-weight="850">+y</text>
+            <text x="445" y="158" fill="#183b56" font-size="13" font-weight="850">+x</text>
+          </svg>
+        </div>
         <div class="slide-map-caption">
           <div><strong>1. Sensor en S</strong><span>La celda de carga está en la báscula y decide \(A=1\) o \(A=0\).</span></div>
           <div><strong>2. Recorrido S → D</strong><span>La pieza avanza por la banda una distancia \(d_{S\to D}\), que se debe medir.</span></div>
