@@ -216,6 +216,7 @@
     .slide-map-caption strong { display: block; margin-bottom: 4px; color: var(--navy); }
     .slide-map-caption span { color: var(--muted); font-size: .9rem; }
     .slide-map-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .slide-wide-diagram { overflow-x: auto; padding-bottom: 4px; }
     .slide-route-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 22px; align-items: start; }
     .slide-route-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; counter-reset: route; }
     .slide-route-list li { position: relative; padding: 15px 16px 15px 52px; border: 1px solid var(--line); border-radius: 16px; background: #fff; counter-increment: route; }
@@ -232,7 +233,7 @@
     .slide-nav button:hover, .slide-nav button:focus-visible { background: var(--blue); outline: none; }
     .slide-count { position: absolute; left: 50%; transform: translateX(-50%); font-size: .86rem; }
     .slide-progress { position: absolute; right: 0; bottom: -8px; left: 0; height: 3px; overflow: hidden; border-radius: 99px; background: rgba(255,255,255,.18); }
-    .slide-progress span { display: block; height: 100%; width: 11.11%; background: var(--orange); transition: width .25s ease; }
+    .slide-progress span { display: block; height: 100%; width: 8.33%; background: var(--orange); transition: width .25s ease; }
     .slide-table { width: 100%; border-collapse: collapse; }
     .slide-table th, .slide-table td { padding: 13px 14px; border-bottom: 1px solid var(--line); text-align: left; }
     .slide-table th { background: #edf4f9; color: var(--navy); }
@@ -247,6 +248,7 @@
       .slide { padding: 34px 22px 100px; }
       .slide-grid-2, .slide-grid-3 { grid-template-columns: 1fr; }
       .slide-map-caption, .slide-route-grid, .slide-map-panels { grid-template-columns: 1fr; }
+      .slide-wide-diagram .slide-svg { min-width: 900px; }
       .slide h1 { font-size: clamp(2.45rem, 12vw, 4rem); }
       .slide h2 { font-size: clamp(2rem, 9vw, 3rem); }
       .slide-nav { right: 12px; bottom: 12px; left: 12px; }
@@ -344,9 +346,64 @@
       </div>
     </section>
 
+    <section class="slide slide-white" data-title="Recorrido completo">
+      <div class="slide-inner">
+        <div class="slide-kicker">03 · Modelo completo del recorrido</div>
+        <h2>De la báscula hasta la rampa: todas las variables</h2>
+        <p class="slide-lede">Este mapa reúne la lectura del peso, el recorrido sobre la banda, la decisión lógica y la geometría de las dos rutas. En las siguientes diapositivas se separa para calcular cada parte sin confundir las medidas.</p>
+        <div class="slide-wide-diagram">
+        <svg class="slide-svg" viewBox="0 0 1100 440" role="img" aria-label="Recorrido completo desde la báscula al desviador y a las rampas con variables de lógica y geometría">
+          <defs>
+            <marker id="flowNavy" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#183b56"/></marker>
+            <marker id="flowRed" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#d8515d"/></marker>
+            <marker id="flowOrange" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#ed8b32"/></marker>
+            <marker id="flowCyan" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#19a7b8"/></marker>
+          </defs>
+          <path d="M70 230H1030" stroke="#183b56" stroke-width="5" stroke-linecap="round" marker-end="url(#flowNavy)"/>
+          <path d="M105 390V62" stroke="#183b56" stroke-width="2" marker-end="url(#flowNavy)"/>
+          <rect x="80" y="183" width="180" height="95" rx="14" fill="#eaf0f5" stroke="#183b56" stroke-width="3"/>
+          <path d="M100 218H238M100 246H238" stroke="#8ca2b2" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="175" cy="230" r="11" fill="#fff" stroke="#d8515d" stroke-width="5"/>
+          <path d="M175 135V194" stroke="#d8515d" stroke-width="3" marker-end="url(#flowRed)"/>
+          <text x="103" y="314" fill="#183b56" font-size="17" font-weight="850">Báscula + celda de carga</text>
+          <text x="115" y="338" fill="#b43e4b" font-size="15" font-weight="850">S=(0,0) · lectura A</text>
+          <text x="103" y="361" fill="#66758a" font-size="14">A=1 pesada · A=0 liviana</text>
+          <text x="145" y="122" fill="#b43e4b" font-size="15" font-weight="850">sensor de peso</text>
+          <rect x="315" y="209" width="32" height="32" rx="5" fill="#f2c46d" stroke="#9b5515" stroke-width="2"/>
+          <text x="290" y="196" fill="#9b5515" font-size="14" font-weight="850">objeto</text>
+          <path d="M260 170H560M260 164V176M560 164V176" stroke="#d8515d" stroke-width="2"/>
+          <path d="M350 225H550" stroke="#d8515d" stroke-width="5" stroke-dasharray="9 7" marker-end="url(#flowRed)"/>
+          <text x="350" y="155" fill="#b43e4b" font-size="16" font-weight="850">dₛ→D = distancia medida en planta</text>
+          <text x="390" y="255" fill="#b43e4b" font-size="14">recorrido de la pieza sobre +x</text>
+          <rect x="555" y="185" width="46" height="92" rx="7" fill="#d8515d"/>
+          <circle cx="578" cy="230" r="10" fill="#fff" stroke="#d8515d" stroke-width="4"/>
+          <path d="M602 230H646" stroke="#d8515d" stroke-width="7" marker-end="url(#flowRed)"/>
+          <text x="520" y="315" fill="#d8515d" font-size="17" font-weight="850">D · desviador neumático</text>
+          <rect x="500" y="335" width="160" height="53" rx="12" fill="#fff8f0" stroke="#d5a46c" stroke-width="2"/>
+          <text x="518" y="357" fill="#9b5515" font-size="14" font-weight="850">Y=A·B + A′·C</text>
+          <text x="518" y="377" fill="#66758a" font-size="12">decide si el cilindro actúa</text>
+          <path d="M578 230L905 104" stroke="#ed8b32" stroke-width="12" stroke-linecap="round" marker-end="url(#flowOrange)"/>
+          <path d="M578 230L905 356" stroke="#19a7b8" stroke-width="12" stroke-linecap="round" marker-end="url(#flowCyan)"/>
+          <path d="M578 230H905M905 230V104M905 230V356" stroke="#8ca2b2" stroke-width="2" stroke-dasharray="7 7"/>
+          <rect x="702" y="58" width="280" height="80" rx="14" fill="#fff9f1" stroke="#edc38f" stroke-width="2"/>
+          <text x="724" y="83" fill="#9b5515" font-size="16" font-weight="850">Rampa pesada · sensor B</text>
+          <text x="724" y="107" fill="#9b5515" font-size="14">Δxₚ, Δyₚ ⟶ Lₚ, +θₚ</text>
+          <text x="724" y="126" fill="#66758a" font-size="12">B=1: rampa pesada libre</text>
+          <rect x="702" y="310" width="280" height="80" rx="14" fill="#f1fbfc" stroke="#8bd3dc" stroke-width="2"/>
+          <text x="724" y="335" fill="#087c8a" font-size="16" font-weight="850">Rampa liviana · sensor C</text>
+          <text x="724" y="359" fill="#087c8a" font-size="14">Δxₗ, Δyₗ ⟶ Lₗ, −θₗ</text>
+          <text x="724" y="378" fill="#66758a" font-size="12">C=1: rampa liviana libre</text>
+          <text x="952" y="219" fill="#183b56" font-size="14" font-weight="850">+x</text>
+          <text x="113" y="75" fill="#183b56" font-size="14" font-weight="850">+y</text>
+        </svg>
+        </div>
+        <p class="slide-note">Variables del recorrido: \(A,B,C,Y,d_{S\to D},\Delta x,\Delta y,L,\theta\). Las letras con subíndice \(p\) pertenecen a la rampa pesada y las de subíndice \(l\) a la liviana.</p>
+      </div>
+    </section>
+
     <section class="slide slide-soft" data-title="Plano cartesiano">
       <div class="slide-inner">
-        <div class="slide-kicker">03 · Plano cartesiano abstracto</div>
+        <div class="slide-kicker">04 · Plano cartesiano abstracto</div>
         <h2>Ubicamos el sensor, el recorrido y el desviador</h2>
         <p class="slide-lede">Usamos el eje \(x\) para seguir el avance de la pieza y el eje \(y\) para mostrar la separación hacia cada rampa. Hay dos referencias: el sensor de peso marca el inicio del recorrido; el desviador es el origen del triángulo de salida.</p>
         <div class="slide-map-panels" role="group" aria-label="Plano cartesiano separado en recorrido y triángulo de salida">
@@ -416,7 +473,7 @@
 
     <section class="slide slide-white" data-title="Recorrido del objeto">
       <div class="slide-inner">
-        <div class="slide-kicker">04 · Recorrido de la pieza</div>
+        <div class="slide-kicker">05 · Recorrido de la pieza</div>
         <h2>¿Qué ocurre desde que llega el objeto?</h2>
         <div class="slide-route-grid" style="margin-top: 24px;">
           <ol class="slide-route-list">
@@ -447,7 +504,7 @@
 
     <section class="slide slide-white" data-title="Triángulo">
       <div class="slide-inner">
-        <div class="slide-kicker">05 · El triángulo rectángulo</div>
+        <div class="slide-kicker">06 · El triángulo rectángulo</div>
         <h2>Identificamos los tres lados</h2>
         <div class="slide-grid-2">
           <svg class="slide-svg" viewBox="0 0 560 340" role="img" aria-label="Triángulo rectángulo con catetos e hipotenusa">
@@ -480,23 +537,49 @@
 
     <section class="slide slide-soft" data-title="Datos reales del ejercicio">
       <div class="slide-inner">
-        <div class="slide-kicker">06 · Valores del documento</div>
+        <div class="slide-kicker">07 · Valores del documento</div>
         <h2>Ahora sustituimos los datos</h2>
         <p class="slide-lede">El ejercicio resuelto de manufactura dice: elevar piezas \(1.50\ \mathrm{m}\), con \(4.00\ \mathrm{m}\) horizontales. La inclinación máxima permitida es \(25^\circ\).</p>
-        <div class="slide-grid-2" style="margin-top: 28px;">
-          <div class="slide-card">
-            <span class="big-number">4.00 m</span>
-            <p>cateto horizontal</p>
+        <div class="slide-grid-2" style="margin-top: 24px;">
+          <svg class="slide-svg" viewBox="0 0 560 360" role="img" aria-label="Ejemplo práctico con triángulo de 4 metros horizontales, 1.5 metros verticales, 4.27 metros de hipotenusa y ángulo de 20.56 grados">
+            <g opacity=".5" stroke="#c7d8e4" stroke-width="1">
+              <path d="M70 70H505M70 125H505M70 180H505M70 235H505M70 290H505"/>
+              <path d="M70 55V310M165 55V310M260 55V310M355 55V310M450 55V310"/>
+            </g>
+            <path d="M70 290H510" stroke="#183b56" stroke-width="4" stroke-linecap="round"/>
+            <path d="M70 315V50" stroke="#183b56" stroke-width="3"/>
+            <path d="M70 290H450" stroke="#183b56" stroke-width="8" stroke-linecap="round"/>
+            <path d="M450 290V145" stroke="#ed8b32" stroke-width="8" stroke-linecap="round"/>
+            <path d="M70 290L450 145" stroke="#d8515d" stroke-width="11" stroke-linecap="round"/>
+            <path d="M426 290V266H450" fill="none" stroke="#8ca2b2" stroke-width="2"/>
+            <path d="M135 290 A65 65 0 0 0 130 266" fill="none" stroke="#ed8b32" stroke-width="3"/>
+            <circle cx="70" cy="290" r="8" fill="#fff" stroke="#d8515d" stroke-width="4"/>
+            <text x="57" y="315" fill="#d8515d" font-size="15" font-weight="850">O=(0,0)</text>
+            <text x="185" y="317" fill="#183b56" font-size="17" font-weight="850">Δx = 4.00 m</text>
+            <text x="458" y="220" fill="#9b5515" font-size="16" font-weight="850">Δy = 1.50 m</text>
+            <text x="212" y="173" transform="rotate(-21 212 173)" fill="#b43e4b" font-size="16" font-weight="850">L = 4.27 m</text>
+            <text x="124" y="260" fill="#9b5515" font-size="15" font-weight="850">θ = 20.56°</text>
+            <text x="457" y="304" fill="#66758a" font-size="13">90°</text>
+            <text x="474" y="286" fill="#183b56" font-size="14" font-weight="850">+x</text>
+            <text x="78" y="65" fill="#183b56" font-size="14" font-weight="850">+y</text>
+            <rect x="310" y="67" width="180" height="45" rx="12" fill="#eaf7f2" stroke="#b8dfd1" stroke-width="2"/>
+            <text x="326" y="95" fill="#177150" font-size="15" font-weight="850">20.56° &lt; 25° ✓</text>
+          </svg>
+          <div>
+            <div class="slide-card">
+              <h3>Datos colocados en el plano</h3>
+              <table class="slide-table">
+                <tr><th>Variable</th><th>Valor</th></tr>
+                <tr><td>Cateto horizontal \(\Delta x\)</td><td>\(4.00\ \mathrm{m}\)</td></tr>
+                <tr><td>Cateto vertical \(\Delta y\)</td><td>\(1.50\ \mathrm{m}\)</td></tr>
+                <tr><td>Ángulo máximo</td><td>\(25^\circ\)</td></tr>
+              </table>
+            </div>
+            <div class="result" style="margin-top:14px;">
+              <strong>Lectura del gráfico:</strong> los datos forman un triángulo rectángulo. El horizontal y el vertical son los valores que se sustituyen después en Pitágoras y en la tangente.
+            </div>
+            <div class="slide-formula" style="margin-top:14px;">\(\text{hipotenusa}=L,\qquad \theta\text{ se mide desde el piso horizontal}\)</div>
           </div>
-          <div class="slide-card">
-            <span class="big-number">1.50 m</span>
-            <p>cateto vertical</p>
-          </div>
-        </div>
-        <div class="slide-formula" style="margin-top:22px;">
-          \[
-            \text{hipotenusa}=L,\qquad \theta\text{ se mide desde el piso horizontal}
-          \]
         </div>
         <p class="slide-note">Estos son valores del ejercicio didáctico del documento. No se presentan como medidas tomadas del desviador real.</p>
       </div>
@@ -504,7 +587,7 @@
 
     <section class="slide slide-white" data-title="Longitud">
       <div class="slide-inner">
-        <div class="slide-kicker">07 · Cálculo 1 de 2</div>
+        <div class="slide-kicker">08 · Cálculo 1 de 2</div>
         <h2>Calculamos la longitud inclinada</h2>
         <p class="slide-lede">Usamos el teorema de Pitágoras. Sustituimos primero y sacamos la raíz después.</p>
         <div class="slide-formula">
@@ -524,7 +607,7 @@
 
     <section class="slide slide-soft" data-title="Ángulo">
       <div class="slide-inner">
-        <div class="slide-kicker">08 · Cálculo 2 de 2</div>
+        <div class="slide-kicker">09 · Cálculo 2 de 2</div>
         <h2>Calculamos el ángulo con tangente</h2>
         <p class="slide-lede">Como conocemos el cateto opuesto y el adyacente, usamos tangente.</p>
         <div class="slide-formula">
@@ -551,7 +634,7 @@
 
     <section class="slide slide-dark" data-title="Desviador">
       <div class="slide-inner">
-        <div class="slide-kicker">09 · Aplicación al desviador neumático</div>
+        <div class="slide-kicker">10 · Aplicación al desviador neumático</div>
         <h2>La misma cuenta se repite para cada rampa</h2>
         <p class="slide-lede">Para el desviador, medimos desde su punto de acción hasta la entrada de cada rampa. Cada rampa tendrá su propio horizontal, vertical, longitud y ángulo.</p>
         <div class="slide-grid-2" style="margin-top: 24px;">
@@ -572,7 +655,7 @@
 
     <section class="slide slide-white" data-title="Cierre">
       <div class="slide-inner">
-        <div class="slide-kicker">10 · Resumen</div>
+        <div class="slide-kicker">11 · Resumen</div>
         <h2>De una medida a una decisión</h2>
         <div class="slide-grid-2">
           <div>
@@ -601,7 +684,7 @@
   </main>
   <nav class="slide-nav" aria-label="Navegación de diapositivas">
     <button id="slidePrev" type="button" aria-label="Diapositiva anterior">← Anterior</button>
-    <span class="slide-count" id="slideCount">1 / 11</span>
+    <span class="slide-count" id="slideCount">1 / 12</span>
     <button id="slideNext" type="button" aria-label="Siguiente diapositiva">Siguiente →</button>
     <span class="slide-progress" aria-hidden="true"><span id="slideProgress"></span></span>
   </nav>
